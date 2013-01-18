@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>Screening Instruments for Depression</title>
+    <question>During the past month have you often been bothered by little interest or pleasure in doing things?</question>
+    <explanation>An affirmative answer to either question is a positive test result; a negative answer to both questions is a negative test result.</explanation>
+</root>

@@ -1,0 +1,8 @@
+<resources>
+     <string name="FontSize">root/font/size</string>
+     <string name="Colours">root/colours</string>
+     <string name="Font">root/font/typefaces</string>
+     <string name="balltestkey">root/balltest</string>
+     <string name="lighthouseflashkey">root/lighthouseflash</string>
+     <string name= "distractBalls">root/distract_Balls</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">3DCop</string>
+    <string name="MenuLighthouseTestButtonText">LightHouse Test</string>
+    <string name="MenuText">Welcome to 3DCop</string>
+    <string name="MenuDRSTestButtonText">Delirium rating scale</string>
+    <string name="MenuExamButtonText">Full Assement</string>
+    <string name="AMTS">AMTS-4</string>
+    <string name="incorrect">incorrect</string>
+    <string name="correct">correct</string>
+    <string name="Passed">Passed:</string>
+    <string name="Failed">Failed:</string>
+    <string name="AMTSQPassed">AMTS-4 Passed</string>
+    <string name="AMTSQfailed">AMTS-4 Failed</string>
+    <string name="MenuTwoItemText">Two Item Screener</string>
+    <string name="MenuCAMText">Confuntion Assement Method</string>
+    <string name="MenuGDS5Text">GDS-5</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="IndivigualExamButtonText">Individual Exams</string>
+    <string name="MenuOptionButtonText">Options</string>
+    <string name="MenuAboutButtonText">About</string>
+    <string name="DRS">Delirium rating scale</string>
+    <string name="Result">Result</string>
+    <string name="twoItem">Two Item Screener</string>
+    <string name="Cam">Confuntion Assement Method</string>
+    <string name="Gds5">GDS-5</string>
+    <string name="Nudesc">NUDESC</string>
+    <string name="options">Options</string>
+    <string name="selectAColour">Select A Colour</string>
+    <string name="selectAFont">Select A Font</string>
+    <string name="submit">Submit</string>
+    <string name="AboutMessage">Delirium occurs in one in five general hospital admissions and its frequency is increasing as our society becomes increasingly aged.
+Despite its frequency and significant impact upon morbidity and mortality, delirium is frequently missed, detected late, or misdiagnosed.
+Clinicians currently use a range of different tests to try and diagnose delirium.
+The aim of this project, is to develop an application, for the android platform, that will automate
+some of the more repetitive tasks involved in administering these tests. </string>
+    <string name="BallTest">Ball Test</string>
+    <string name="SpaceCogTest">Spatial Span test</string>
+    <string name="ProbableDementia">Diagnosis:\n\tProbable dementia\n\tconfirm with MMSE</string>
+    <string name="DiagnosisUnclear">Diagnosis unclear</string>
+    <string name="DiagnosisDelirium">Diagnosis:\n\tdelirium\n\t</string>
+    <string name="DiagnosisDepression">Diagnosis:\n\tDepression\n\t</string>
+    <string name="ValueCorrect">The vaule entered is CORRECT</string>
+    <string name="ValueIncorrect">The vaule entered is INCORRECT</string>
+    <string name="small">small</string>
+    <string name="standard">standard</string>
+    <string name="large">large</string>
+    <string name="SelectedValue">The Selected Value is: </string>
+    <string name="Count">The count is: </string>
+    <string name="Disclaimer">This Application has been developed, \nin part fufillment of academic requirments and constraints as a final year project.\n3dCop has been implemented by Sean Mooney, \n under the suppervision of Dr Chris Exton, Professor David Meagher and Dr Shane O\'Hanlon. </string>
+    <string name = "MenuConfigButtonText">Config Exams</string>
+    <string name="config1">Number of lighthouse flashes</string>
+    <string name="ballCheck">Include distraction Balls</string>
+</resources>

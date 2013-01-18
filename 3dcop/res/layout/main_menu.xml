@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:binding="http://www.gueei.com/android-binding/"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:gravity="center">
+
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:gravity="center" binding:text="@string/MenuText"
+                android:layout_marginBottom="30dp" android:layout_marginTop="25dp"
+                android:id="@id/MenuText"/>
+
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuExamButtonText" binding:onClick="LaunchExam"
+                android:layout_margin="7dp"  android:id="@id/ExamButton"/>
+
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/IndivigualExamButtonText" binding:onClick="LaunchExamMenu"
+                android:layout_margin="7dp"  android:id="@id/IndivigualExamButton"/>
+
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuOptionButtonText" binding:onClick="LaunchOptionsScreen"
+                android:layout_margin="7dp"  android:id="@id/OptionsButton"/>
+
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuConfigButtonText" binding:onClick="LaunchConfigScreen"
+                android:layout_margin="7dp"  android:id="@id/ConfigButton"/>
+
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuAboutButtonText" binding:onClick="LaunchAboutScreen"
+                android:layout_margin="7dp"  android:id="@id/AboutButton"/>
+
+    </LinearLayout>
+</ScrollView>

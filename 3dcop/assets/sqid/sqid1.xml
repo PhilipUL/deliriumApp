@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>SQID</title>
+    <question>Do you think [name of patient] has been more confused  recently?</question>
+    <explanation>Not present</explanation>
+</root>

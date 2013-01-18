@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="min3d">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../commonLibs/min3d/src" />
+    </SOURCES>
+  </library>
+</component>

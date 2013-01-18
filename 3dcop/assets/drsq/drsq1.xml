@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>DRS</layout_type>
+    <title>DRS:Delirium Rating Scale</title>
+    <question>Sleep-wake cycle disturbance: Rate sleep-wake pattern using all sources of information, including from family, caregivers, nurses’ reports, and patient. Try to distinguish sleep from resting with eyes closed.</question>
+    <explanation>Not present</explanation>
+    <explanation>Mild sleep continuity disturbance at night or occasional drowsiness during the day</explanation>
+    <explanation>Moderate disorganization of sleep-wake cycle (e.g., falling asleep during conversations, napping during the day or several brief
+awakenings during the night with confusion/behavioral changes or very little nighttime sleep)</explanation>
+    <explanation>Severe disruption of sleep-wake cycle (e.g., day-night reversal of sleep-wake cycle or severe circadian fragmentation with multiple
+periods of sleep and wakefulness or severe sleeplessness.)</explanation>
+</root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:binding="http://www.gueei.com/android-binding/"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    >
+
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+         android:layout_marginBottom="100dp" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="fill_parent" android:layout_height="150dp"
+            android:gravity="center" binding:text="question" />
+            <SeekBar android:layout_width="fill_parent" android:layout_height="wrap_content"
+           android:layout_margin="10dp"  android:id="@+id/seekbar"
+           android:max="4" android:progress="0" binding:onSeekBarChange="SliderMoved"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="125dp"
+             android:gravity="center_horizontal" binding:text="explanation" android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="50dp"
+     android:layout_marginTop="-75dp"             android:orientation="horizontal" android:gravity="center">
+        <Button android:layout_width="100dp" android:layout_height="fill_parent"
+                android:text="Previous" binding:onClick="previous" />
+        <Button android:layout_width="100dp" android:layout_height="fill_parent"
+                android:text="Note" binding:onClick="note" />
+        <Button android:layout_width="100dp" android:layout_height="fill_parent"
+                android:text="Next" binding:onClick="next" />
+    </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>NUDESC</title>
+    <question>Does the patient exhibit symptoms of psychomotor retardation?</question>
+    <explanation>Delayed responsiveness, few or no spontaneous actions/words e.g when patient is prodded, reaction is deferred and/or the patient is unrousable.</explanation>
+</root>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:binding="http://www.gueei.com/android-binding/"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:gravity="center" android:layout_weight="1">
+        <TextView android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp" android:layout_width="fill_parent"
+                  android:gravity="center" android:text="Text Size" android:layout_margin="5dp"
+                android:id="@id/TextSize"/>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                  android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <Button android:layout_width="100dp" android:layout_height="fill_parent"  android:id="@id/smallButton"
+                    android:layout_weight=".3" android:text="small" binding:onClick="smallText" />
+            <Button android:layout_width="100dp" android:layout_height="fill_parent"  android:id="@id/mediumButton"
+                    android:layout_weight=".3" android:text="standard" binding:onClick="standardText" />
+            <Button android:layout_width="100dp" android:layout_height="fill_parent"   android:id="@id/largeButton"
+                    android:layout_weight=".3"  android:text="large" binding:onClick="largeText" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                  android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent" android:layout_width="100dp"
+                  android:gravity="center" android:text="Text Colour:" android:layout_margin="5dp"
+                    android:id="@id/textColourTextView" android:layout_weight=".5"/>
+            <Spinner android:id="@id/textColourChoser" android:layout_width="150dp"
+                     android:layout_height="fill_parent" android:prompt="@string/selectAColour"
+                    android:layout_margin="5dp" android:layout_weight=".5"/>
+        </LinearLayout>
+         <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                  android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent" android:layout_width="100dp"
+                  android:gravity="center" android:text="Background Colour:" android:layout_margin="5dp"
+                    android:id="@id/backgroundColourText" android:layout_weight=".5"/>
+            <Spinner android:id="@id/backgroundColourChoser" android:layout_width="150dp"
+                     android:layout_height="fill_parent" android:prompt="@string/selectAColour"
+                    android:layout_margin="5dp" android:layout_weight=".5"/>
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                  android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent" android:layout_width="100dp"  android:layout_weight=".5"
+                  android:gravity="center" android:text="Acent Colour:" android:layout_margin="5dp"
+                    android:id="@id/AcentColourText"/>
+            <Spinner android:id="@id/AcentColourChoser" android:layout_width="150dp"
+                     android:layout_height="fill_parent" android:prompt="@string/selectAColour"
+                    android:layout_margin="5dp" android:layout_weight=".5"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                  android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent" android:layout_width="100dp"
+                  android:gravity="center" android:text="Font:" android:layout_margin="5dp"
+                    android:id="@id/FontText" android:layout_weight=".5"/>
+            <Spinner android:id="@id/fontChoser" android:layout_width="150dp"
+                     android:layout_height="fill_parent" android:prompt="@string/selectAFont"
+                    android:layout_margin="5dp" android:layout_weight=".5"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                      android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent" android:layout_width="100dp"
+                      android:gravity="center" android:text="Ball Count:" android:layout_margin="5dp"
+                      android:id="@id/FontText" android:layout_weight=".5"/>
+            <Spinner android:id="@id/BallCountChoser"
+                     android:layout_width="150dp"
+                     android:layout_height="fill_parent"
+                     android:layout_margin="5dp"
+                     android:layout_weight=".5"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="100dp"
+                      android:gravity="center"
+                      android:text="Lighthouse Flash Count:"
+                      android:layout_margin="5dp"
+                      android:id="@id/FontText"
+                      android:layout_weight=".5"/>
+            <Spinner android:id="@id/LighthouseFlashCountChoser"
+                     android:layout_width="150dp"
+                     android:layout_height="fill_parent"
+                     android:layout_margin="5dp"
+                     android:layout_weight=".5"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
+
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="100dp"
+                      android:gravity="center"
+                      android:layout_margin="5dp"
+                      android:layout_weight=".5"
+                      android:text="Bouncing Ball Test Options"
+                      android:id="@id/FontTextBouncingBallHead"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
+            <CheckBox android:id="@+id/checkbox_DistractBalls"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/ballCheck"
+                      android:onClick="onCheckboxClicked"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
+
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="100dp"
+                      android:gravity="center"
+                      android:layout_margin="5dp"
+                      android:layout_weight=".5"
+                      android:text="Lighthouse Head-On Flash Options"
+                      android:id="@id/FontTextFlashFront"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
+
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="100dp"
+                      android:gravity="center"
+                      android:layout_margin="5dp"
+                      android:layout_weight=".5"
+                      android:text="Lighthouse Flash Size:"
+                      android:id="@id/FontTextFlashSize"/>
+
+            <SeekBar
+                     android:layout_width="150dp"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="5dp"
+                     android:layout_weight=".5"
+                     android:id="@id/seekbarFlashSize"
+                     android:max="20"
+                     android:progress="0"
+                     binding:onSeekBarChange="SliderMovedFlashSize"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
+
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="100dp"
+                      android:gravity="center"
+                      android:layout_margin="5dp"
+                      android:layout_weight=".5"
+                      android:text="Lighthouse Flash Speed:"
+                      android:id="@id/FontTextFlashSpeed"/>
+
+            <SeekBar
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight=".5"
+                    android:id="@id/seekbarFlashSpeed"
+                    android:max="20"
+                    android:progress="0"
+                    binding:onSeekBarChange="SliderMovedFlashSpeed"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

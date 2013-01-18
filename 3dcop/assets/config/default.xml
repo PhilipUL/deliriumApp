@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <font>
+        <size current="standard">
+            <small>20</small>
+            <standard>28</standard>
+            <large>36</large>
+        </size>
+        <typefaces current="standard">
+            <standard>Fonts/Gabriola.ttf</standard>
+            <gabriola>Fonts/Gabriola.ttf</gabriola>
+            <comic>Fonts/comic.ttf</comic>
+            <lucida>Fonts/lucon.ttf</lucida>
+            <times>Fonts/times.ttf</times>
+            <script>Fonts/ITCEDSCR.TTF</script>
+            <freehand>Fonts/FREESCPT.TTF</freehand>
+        </typefaces>
+    </font>
+    <colours text="white" background="black" acent="gray" >
+        <light_gray>#bbbbbb</light_gray>
+        <gray>#555555</gray>
+        <dark_gray>#333333</dark_gray>
+        <white>#ffffff</white>
+        <black>#000000</black>
+        <bright_red>#ff0000</bright_red>
+        <bright_green>#00ff00</bright_green>
+        <bright_blue>#0000ff</bright_blue>
+        <dark_red>#550000</dark_red>
+        <dark_green>#005500</dark_green>
+        <dark_blue>#000055</dark_blue>
+        <blue>#0000aa</blue>
+        <red>#aa0000</red>
+        <green>#00aa00</green>
+        <cornsilk>#fff8dc</cornsilk>
+        <ivory>#fffff0</ivory>
+        <turquoise>#00ced1</turquoise>
+        <yellow>#ffff00</yellow>
+        <firebrick>#b22222</firebrick>
+        <brown>#8b4513</brown>
+        <deep_pink>#ff1493</deep_pink>
+        <violet>#9400d3</violet>
+        <plum>#da70d6</plum>
+        <orange>#ff4500</orange>
+    </colours>
+    <balltest ballcount="0" />
+    <lighthouseflash flashcount="0" />
+    <distract_Balls distract="false" />
+</root>

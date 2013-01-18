@@ -1,0 +1,10 @@
+<resources>
+    <string name="user">user.xml</string>
+    <string name="defaultConfig">config/default.xml</string>
+    <string name="nudesc">nudesc</string>
+    <string name="gds5Path">gds-5</string>
+    <string name="drsqPath">drsq</string>
+    <string name="camPath">cam</string>
+    <string name="amtsPath">amts</string>
+    <string name="twoItemPath">2-item_screener</string>
+</resources>

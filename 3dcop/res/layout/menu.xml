@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:binding="http://www.gueei.com/android-binding/"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:gravity="center">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:gravity="center" binding:text="@string/MenuText"    android:id="@id/textview"
+                android:layout_marginBottom="30dp" android:layout_marginTop="25dp" />
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuLighthouseTestButtonText" binding:onClick="LaunchLightHouseTestCommand"
+                android:layout_margin="15dp"  android:id="@id/lighthouseMenuButton" />
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuDRSTestButtonText" binding:onClick="LaunchDRSTestCommand"
+                android:layout_margin="15dp" android:id="@id/DRSButton"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/AMTS" binding:onClick="Launch3dCopExamCommand"
+                android:layout_margin="15dp" android:id="@id/ExamButton"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuTwoItemText" binding:onClick="LaunchTwoItemScreenerCommand"
+                android:layout_margin="15dp" android:id="@id/TwoItemButton"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuCAMText" binding:onClick="LaunchCAMCommand"
+                android:layout_margin="15dp" android:id="@id/CAMButton"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuGDS5Text" binding:onClick="LaunchGDS5Command"
+                android:layout_margin="15dp" android:id="@id/GDS5Button"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/BallTest" binding:onClick="LaunchBallTestCommand"
+                android:layout_margin="15dp" android:id="@id/BallTestButton"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/SpaceCogTest" binding:onClick="SpaceCog"
+                android:layout_margin="15dp" android:id="@id/SpaceCogButton"/>
+    </LinearLayout>
+</ScrollView>

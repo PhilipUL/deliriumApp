@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>CAM:Confusion Assessment Method</title>
+    <feature>Feature 3: Disorganized thinking</feature>
+    <question>Disorganized thinking</question>
+    <explanation>This feature is shown by a positive response to the following question: Was the patient’s thinking disorganized or incoherent, such as rambling or irrelevant conversation, unclear or illogical flow of ideas, or unpredictable switching from subject to subject?</explanation>
+</root>

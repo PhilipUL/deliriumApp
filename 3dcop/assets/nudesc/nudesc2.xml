@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>NUDESC</title>
+    <question>Does the patient exhibit inappropriate behaviour?</question>
+    <explanation>Behaviour inappropriate to place and/or for the person e.g pulling at tubes or dressings, attempting to get out of bed when that is contraindicated.</explanation>
+</root>

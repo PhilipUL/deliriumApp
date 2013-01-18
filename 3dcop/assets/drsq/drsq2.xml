@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>DRS</layout_type>
+    <title>DRS:Delirium Rating Scale</title>
+    <question>Perceptual disturbances and hallucinations: Illusions and hallucinations can be of any sensory modality. Misperceptions are “simple” if they are uncomplicated, such as a sound, noise, color, spot, or flashes and ‘‘complex’’ if they are multidimensional, such as voices, music, people, animals, or scenes. Rate if reported by patient or caregiver, or inferred by observation.</question>
+    <explanation>Not present</explanation>
+    <explanation>Mild perceptual disturbances (e.g., feelings of derealization or depersonalization; or patient may not be able to discriminate dreams
+from reality)</explanation>
+    <explanation>Illusions present</explanation>
+    <explanation>Hallucinations present</explanation>
+</root>

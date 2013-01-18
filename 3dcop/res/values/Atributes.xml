@@ -1,0 +1,11 @@
+<resources>
+    <string name="text">text</string>
+    <string name="bg">background</string>
+    <string name="acent">acent</string>
+    <string name="current">current</string>
+    <string name="question">question</string>
+    <string name="explanation">explanation</string>
+    <string name="ballcount">ballcount</string>
+    <string name="flashcount">flashcount</string>
+    <string name="distract">distract</string>
+</resources>

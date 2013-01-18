@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>CAM:Confusion Assessment Method</title>
+    <feature>Feature 4: Altered Level of consciousness</feature>
+    <question>Altered Level of consciousness</question>
+    <explanation>This feature is shown by any answer other than “alert” to the following question: Overall, how would you rate this patient’s level of consciousness? (alert [normal]), vigilant [hyperalert], lethargic [drowsy, easily aroused], stupor [difficult to arouse], or coma [unarousable])</explanation>
+</root>

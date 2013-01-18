@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>CAM:Confusion Assessment Method</title>
+    <feature>Feature 1: Acute Onset or Fluctuating Course</feature>
+    <question>Acute Onset or Fluctuating Course</question>
+    <explanation>Is there evidence of an acute change in mental status from the patient’s baseline? Did the (abnormal) behavior fluctuate during the day, that is, tend to come and go, or increase and decrease in severity?</explanation>
+</root>

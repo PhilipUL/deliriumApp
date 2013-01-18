@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <layout_type>YesNo</layout_type>
+    <title>NUDESC</title>
+    <question>Does the patient have symptoms of disorientation?</question>
+    <explanation>Verbal or behavioural of not being orientated to time or place or misperceiving persons in the environment.</explanation>
+</root>
