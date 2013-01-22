@@ -3,7 +3,9 @@ package skm.android.ViewModle.ViewModles.main;
 import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.SeekBar;
 import gueei.binding.Command;
+import gueei.binding.observables.FloatObservable;
 import skm.android.Options;
 import skm.android.R;
 import skm.android.ViewModle.ViewModles.Shared;
@@ -43,6 +45,18 @@ public class OptionsViewModle extends ViewModleBase {
     public List<String> getColours(){return Colours;}
     public List<String> getFonts(){return Fonts;}
     public List<String> getIntOptions(){return intOptions;}
+    public FloatObservable seekBar1 = new FloatObservable(0f);
+    public FloatObservable seekBar2 = new FloatObservable(0f);
+    public FloatObservable SeekBarTargetSpeed = new FloatObservable(0f);
+
+    public FloatObservable SeekBarDistractionSpeed = new FloatObservable(0f);
+    public FloatObservable SeekBarMinDistractionSpeed = new FloatObservable(0f);
+    public FloatObservable SeekBarMaxDistractionSpeed = new FloatObservable(0f);
+
+    public FloatObservable SeekBarFlashSpeed = new FloatObservable(0f);
+    public FloatObservable SeekBarFlashSizeProgress = new FloatObservable(0f);
+
+
 
     public int ballcount=0;
     public final Command smallText = new Command(){
@@ -52,6 +66,66 @@ public class OptionsViewModle extends ViewModleBase {
             Options.getCurrentInstance().initAll(true);
         }
     };
+
+
+
+    public final Command SliderMovedMaxSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
+
+//            TextView targetMaxSpeed = (TextView) findViewById(R.id.FontTextTargetMaxSpeed);
+//            targetMaxSpeed.setText("Target Ball Max Speed: "+Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), this));
+
+        }
+    };
+
+    public final Command SliderMovedMinSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMinSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
+        }
+    };
+
+
+    public final Command SliderMovedTargetBallSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetSpeedBall), String.valueOf(bar.getProgress()), getApplicationContext());
+
+        }
+    };
+
+    public final Command SliderMovedDistractMaxSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
+        }
+    };
+
+
+    public final Command SliderMovedDistractMinSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
+
+        }
+    };
+
+    public final Command SliderMovedDistractBallSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), String.valueOf(bar.getProgress()), getApplicationContext());
+
+        }
+    };
+
     public final Command standardText = new Command(){
         @Override
 	    public void Invoke(View arg0, Object... arg1) {

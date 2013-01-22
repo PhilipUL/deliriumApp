@@ -5,4 +5,7 @@
      <string name="balltestkey">root/balltest</string>
      <string name="lighthouseflashkey">root/lighthouseflash</string>
      <string name= "distractBalls">root/distract_Balls</string>
+     <string name= "TargetSpeed">root/TargetSpeed</string>
+     <string name= "DistractionTargetSpeed">root/DistractionTargetSpeed</string>
+     <string name= "BallRadio">root/BallRadio</string>
 </resources>

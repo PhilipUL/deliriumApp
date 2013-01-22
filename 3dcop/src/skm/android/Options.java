@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.CheckBox;
-import android.widget.Spinner;
+import android.widget.*;
 import gueei.binding.Binder;
 import skm.android.ViewModle.ViewModles.Shared;
 import skm.android.ViewModle.ViewModles.SpinnerArrayAdapter;
@@ -25,6 +23,7 @@ public class Options extends ActivityBase
     public static final String PREF_NAME = "CONFIG_TEST";
     public static final int MODE = Context.MODE_PRIVATE;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -40,30 +39,8 @@ public class Options extends ActivityBase
         //SharedPreferences pref = context.getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
     }
 
-
     public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-//        boolean checked = ((CheckBox) view).isChecked();
-//        checked = true;
-//        // Check which checkbox was clicked
-//        switch(view.getId())
-//        {
-//            case R.id.checkbox_DistractBalls:
-//                if (checked)
-//                {
-//                    System.out.println("checkbox checked");
-//                    Shared.setOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), "true", this);
-//                }
-//                else
-//                {
-//
-//                    System.out.println("checkbox unchecked");
-//                    Shared.setOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), "false", this);
-//                }
-//                // Remove the meat
-//                break;
-//        }
-//
+
         boolean checked = ((CheckBox) view).isChecked();
         if(checked == true)
         {
@@ -72,8 +49,59 @@ public class Options extends ActivityBase
             Shared.setOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), "false", this);
         }
 
-
+        checkDistractionSliderState();
     }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radioRandomize:
+                if (checked)
+                    ((RadioButton) findViewById(R.id.radioRandomize)).setChecked(true);
+                    ((RadioButton) findViewById(R.id.radioNonRandomize)).setChecked(false);
+                    Shared.setOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), "true" , this);
+                    checkDistractionSliderState();
+                    // Pirates are the best
+                    break;
+            case R.id.radioNonRandomize:
+                if (checked)
+                    ((RadioButton) findViewById(R.id.radioRandomize)).setChecked(false);
+                    ((RadioButton) findViewById(R.id.radioNonRandomize)).setChecked(true);
+                    Shared.setOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), "false" , this);
+                    checkDistractionSliderState();
+                    // Ninjas rule
+                    break;
+        }
+    }
+
+//    public void onRadioBoxClickedRandomize(View view)
+//    {
+//        Shared.setOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), "true" , this);
+//        if(!((RadioButton)view).isChecked())// if the randomize radio is not checked, then check it, using toggle
+//        {
+//            ((RadioButton) findViewById(R.id.radioRandomize)).toggle();
+//        }
+//        if(((RadioButton)findViewById(R.id.radioNonRandomize)).isChecked())
+//        {
+//            ((RadioButton) findViewById(R.id.radioNonRandomize)).toggle();
+//        }
+//
+//    }
+//    public void onRadioBoxClickedNonRandomize(View view)
+//    {
+//        Shared.setOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), "false" , this);
+//        if(!((RadioButton)view).isChecked())// if the non-randomize radio is not checked, then check it, using toggle
+//        {
+//            ((RadioButton) findViewById(R.id.radioNonRandomize)).toggle();
+//        }
+//        if(((RadioButton)findViewById(R.id.radioRandomize)).isChecked())// if the randomize radio is not checked, then check it, using toggle
+//        {
+//            ((RadioButton) findViewById(R.id.radioRandomize)).toggle();
+//        }
+//    }
 
     // To read from sharedPreferences, we need the SharedPreferences object
     // to edit variables in sharedPreferences, we need to create an editor for it, using getEditor
@@ -94,8 +122,69 @@ public class Options extends ActivityBase
         final CheckBox checkBox = (CheckBox)findViewById(R.id.checkbox_DistractBalls);
         checkBox.setChecked(Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this)));
 
+        SeekBar distractionBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
+        SeekBar distractionBarMinSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
+        SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
+        distractionBarMaxSpeed.setEnabled(false);
+        distractionBarMinSpeed.setEnabled(false);
+        distractionBarSpeed.setEnabled(false);
+
+        checkDistractionSliderState();
 
     }
+
+    public void checkDistractionSliderState()
+    {
+
+        SeekBar distractionBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
+        SeekBar distractionBarMinSpeed = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
+        SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
+        SeekBar TargetBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarTargetMaxSpeed);
+        SeekBar TargetBarMinSpeed = (SeekBar) findViewById(R.id.seekTargetMinSpeed);
+        SeekBar barSpeed = (SeekBar) findViewById(R.id.seekbarTargetBallSpeed);
+
+        if(((RadioButton) findViewById(R.id.radioRandomize)).isChecked() && ((CheckBox)findViewById(R.id.checkbox_DistractBalls)).isChecked())  // if random and distract balls are set to true
+        {
+            distractionBarMaxSpeed.setEnabled(true);
+            distractionBarMinSpeed.setEnabled(true);
+            TargetBarMaxSpeed.setEnabled(true);
+            TargetBarMinSpeed.setEnabled(true);
+
+            distractionBarSpeed.setEnabled(false);
+            barSpeed.setEnabled(false);
+        }else if(((RadioButton) findViewById(R.id.radioRandomize)).isChecked() == false)
+        {
+            barSpeed.setEnabled(true);
+            TargetBarMaxSpeed.setEnabled(false);
+            TargetBarMinSpeed.setEnabled(false);
+
+            distractionBarMaxSpeed.setEnabled(false);
+            distractionBarMinSpeed.setEnabled(false);
+
+            if(((CheckBox)findViewById(R.id.checkbox_DistractBalls)).isChecked())
+            {
+                distractionBarSpeed.setEnabled(true);
+            } else {
+                distractionBarSpeed.setEnabled(false);
+            }
+        } else if(((RadioButton) findViewById(R.id.radioRandomize)).isChecked() == true)
+        {
+            barSpeed.setEnabled(false);
+            TargetBarMaxSpeed.setEnabled(true);
+            TargetBarMinSpeed.setEnabled(true);
+
+            distractionBarSpeed.setEnabled(false);
+            if(((CheckBox)findViewById(R.id.checkbox_DistractBalls)).isChecked())
+            {
+                distractionBarMaxSpeed.setEnabled(true);
+                distractionBarMinSpeed.setEnabled(true);
+            } else {
+                distractionBarMaxSpeed.setEnabled(false);
+                distractionBarMinSpeed.setEnabled(false);
+            }
+        }
+    }
+
     private void initSpinners() {
         Spinner spinner = (Spinner) findViewById(R.id.textColourChoser);
         List<String> temp = modle.getColours();
@@ -157,10 +246,37 @@ public class Options extends ActivityBase
     public void initAll(){
         super.initAll();
         initCheckBoxes();
+        initSliders();
         this.getWindow().getDecorView().invalidate();
 
 
     }
+
+    public void initSliders()
+    {
+        SeekBar bar = (SeekBar) findViewById(R.id.seekbarTargetMaxSpeed);
+        bar.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), this))); // get the string back from the xml file, and convert it to an int
+
+        SeekBar barTarMin = (SeekBar) findViewById(R.id.seekTargetMinSpeed);
+        barTarMin.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMinSpeed), this)));
+
+        SeekBar barTarSpeed = (SeekBar) findViewById(R.id.seekbarTargetBallSpeed);
+        barTarSpeed.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetSpeedBall), this)));
+
+
+
+
+        SeekBar distractionBarMax = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
+        distractionBarMax.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), this))); // get the string back from the xml file, and convert it to an int
+
+        SeekBar distractionBarMin = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
+        distractionBarMin.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), this)));
+
+        SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
+        distractionBarSpeed.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this)));
+
+    }
+
 
    @Override
     public void initText() {
@@ -180,6 +296,9 @@ public class Options extends ActivityBase
        elements.add(findViewById(R.id.textColourChoser));
        initText(elements);
 
+
+//       TextView targetMaxSpeed = (TextView) findViewById(R.id.FontTextTargetMaxSpeed);
+//       targetMaxSpeed.setText("Target Ball Max Speed: "+Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), this));
     }
 
 

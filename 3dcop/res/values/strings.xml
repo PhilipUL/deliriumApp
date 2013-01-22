@@ -52,4 +52,16 @@ some of the more repetitive tasks involved in administering these tests. </strin
     <string name = "MenuConfigButtonText">Config Exams</string>
     <string name="config1">Number of lighthouse flashes</string>
     <string name="ballCheck">Include distraction Balls</string>
+    <string name="radio_randomize">Randomize Ball Speed</string>
+    <string name="radio_non_randomize">Non Randomize Ball Speed</string>
+    <string name="TargetBallMaxSpeed">Target Ball Max Speed:</string>
+    <string name="TargetBallMinSpeed">Target Ball Min Speed:</string>
+    <string name="TargetBallSpeed">Target Ball Speed:</string>
+    <string name="DistractionBallMaxSpeed">Distraction Ball Max Speed:</string>
+    <string name="DistractionBallMinSpeed">Distraction Ball Min Speed:</string>
+    <string name="DistractionBallSpeed">Distraction Ball Speed:</string>
+
+
+
+
 </resources>

@@ -45,4 +45,7 @@
     <balltest ballcount="0" />
     <lighthouseflash flashcount="0" />
     <distract_Balls distract="false" />
+    <TargetSpeed TargetMaxSpeed="0" TargetMinSpeed="0" TargetSpeedBall="0"/>
+    <DistractionTargetSpeed MaxSpeed="0" MinSpeed="0" Speed="0"/>
+    <BallRadio checked="true"/>
 </root>

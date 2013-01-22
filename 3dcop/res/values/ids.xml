@@ -47,4 +47,22 @@
     <item name="seekbarFlashSpeed" type="id"/>
     <item name="FontTextFlashFront" type="id"/>
     <item name="FontTextBouncingBallHead" type="id"/>
+    <item name="seekbarTargetMaxSpeed" type="id"/>
+    <item name="seekTargetMinSpeed" type="id"/>
+    <item name="FontSeekTargetMinSpeed" type="id"/>
+    <item name="FontTextTargetBallSpeed" type="id"/>
+    <item name="seekbarTargetBallSpeed" type="id"/>
+    <item name="TargetBallColourChoser" type="id"/>
+    <item name="TargetBallColourText" type="id"/>
+    <item name="DistractionBallColourChoser" type="id"/>
+    <item name="DistractionBallColourText" type="id"/>
+    <item name="seekbarDistractionBallSpeed" type="id"/>
+    <item name="FontTextDistractionBallSpeed" type="id"/>
+    <item name="FontTextDistractionMaxSpeed" type="id"/>
+    <item name="FontSeekDistractionMinSpeed" type="id"/>
+    <item name="seekbarDistractionMaxSpeed" type="id"/>
+    <item name="seekDistractionMinSpeed" type="id"/>
+    <item name="FontTextTargetMaxSpeed" type="id"/>
+    <item name="SaveBallTest" type="id"/>
+    <item name="PreviewBallTest" type="id"/>
 </resources>

@@ -8,4 +8,12 @@
     <string name="ballcount">ballcount</string>
     <string name="flashcount">flashcount</string>
     <string name="distract">distract</string>
+    <string name="TargetMaxSpeed">TargetMaxSpeed</string>
+    <string name="TargetMinSpeed">TargetMinSpeed</string>
+    <string name="TargetSpeedBall">TargetSpeedBall</string>
+    <string name="MaxSpeed">MaxSpeed</string>
+    <string name="MinSpeed">MinSpeed</string>
+    <string name="Speed">Speed</string>
+    <string name="checked">checked</string>
+
 </resources>
