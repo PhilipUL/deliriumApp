@@ -56,6 +56,23 @@ public class Options extends ActivityBase
 
     }
 
+    public void initRadioButtons()
+    {
+
+        final RadioButton radioRandomize = (RadioButton)findViewById(R.id.radioRandomize);
+        final RadioButton radioNonRandomize = (RadioButton)findViewById(R.id.radioNonRandomize);
+
+        radioRandomize.setChecked(Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), this)));
+        radioNonRandomize.setChecked(!Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), this)));
+
+        final RadioButton radioLightHead = (RadioButton)findViewById(R.id.radioLightHead);
+        final RadioButton radioLightRotate = (RadioButton)findViewById(R.id.radioLightRotate);
+
+        radioLightHead.setChecked(Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this)));
+        radioLightRotate.setChecked(!Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this)));
+
+    }
+
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -78,34 +95,21 @@ public class Options extends ActivityBase
                     checkDistractionSliderState();
                     // Ninjas rule
                     break;
+            case R.id.radioLightHead:
+                if(checked)
+                    ((RadioButton) findViewById(R.id.radioLightHead)).setChecked(true);
+                    ((RadioButton) findViewById(R.id.radioLightRotate)).setChecked(false);
+                    Shared.setOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), "false" , this);
+                    break;
+
+            case R.id.radioLightRotate:
+                if(checked)
+                    ((RadioButton) findViewById(R.id.radioLightHead)).setChecked(false);
+                    ((RadioButton) findViewById(R.id.radioLightRotate)).setChecked(true);
+                    Shared.setOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), "true" , this);
+                    break;
         }
     }
-
-//    public void onRadioBoxClickedRandomize(View view)
-//    {
-//        Shared.setOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), "true" , this);
-//        if(!((RadioButton)view).isChecked())// if the randomize radio is not checked, then check it, using toggle
-//        {
-//            ((RadioButton) findViewById(R.id.radioRandomize)).toggle();
-//        }
-//        if(((RadioButton)findViewById(R.id.radioNonRandomize)).isChecked())
-//        {
-//            ((RadioButton) findViewById(R.id.radioNonRandomize)).toggle();
-//        }
-//
-//    }
-//    public void onRadioBoxClickedNonRandomize(View view)
-//    {
-//        Shared.setOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), "false" , this);
-//        if(!((RadioButton)view).isChecked())// if the non-randomize radio is not checked, then check it, using toggle
-//        {
-//            ((RadioButton) findViewById(R.id.radioNonRandomize)).toggle();
-//        }
-//        if(((RadioButton)findViewById(R.id.radioRandomize)).isChecked())// if the randomize radio is not checked, then check it, using toggle
-//        {
-//            ((RadioButton) findViewById(R.id.radioRandomize)).toggle();
-//        }
-//    }
 
     // To read from sharedPreferences, we need the SharedPreferences object
     // to edit variables in sharedPreferences, we need to create an editor for it, using getEditor
@@ -250,6 +254,7 @@ public class Options extends ActivityBase
     @Override
     public void initAll(){
         super.initAll();
+        initRadioButtons();
         initCheckBoxes();
         initSliders();
         this.getWindow().getDecorView().invalidate();

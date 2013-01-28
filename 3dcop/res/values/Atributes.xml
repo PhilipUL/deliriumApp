@@ -16,5 +16,6 @@
     <string name="Speed">Speed</string>
     <string name="checked">checked</string>
     <string name="sequence">sequence</string>
+    <string name="rotate">rotate</string>
 
 </resources>

@@ -43,7 +43,7 @@
         <orange>#ff4500</orange>
     </colours>
     <balltest ballcount="0" />
-    <lighthouseflash flashcount="0" sequence=""/>
+    <lighthouseflash flashcount="0" sequence="" rotate="true"/>
     <distract_Balls distract="false" />
     <TargetSpeed TargetMaxSpeed="0" TargetMinSpeed="0" TargetSpeedBall="0"/>
     <DistractionTargetSpeed MaxSpeed="0" MinSpeed="0" Speed="0"/>
