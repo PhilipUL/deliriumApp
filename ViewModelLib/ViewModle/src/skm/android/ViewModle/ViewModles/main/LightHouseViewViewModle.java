@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 import java.util.Vector;
+import java.lang.String;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,6 +60,10 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
      public void  init() {
 
          noFlashesSpecified = Integer.parseInt(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashcount), this));
+         String sequence = Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.sequence), this);
+         //String sequence = "3,2,1";
+         String[] sequenceArray = sequence.split(",");
+
          if(noFlashesSpecified > 0)
          {
              flashesSpecified = true;
@@ -77,46 +82,72 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
          if(flashesSpecified == false)
          {
-             int rand = random.nextInt(6);
-             for(int i=0;i<5+rand;i++){
-                 if(clips.size()==0)
+             if(sequenceArray[0] != "")
+             {
+                 if(clips.size() == 0)
                  {
-                     addClip(clips,start,1);
-                     addClip(clips,wait,4);
-                     //addClip(clips,flash,1+random.nextInt(2));
-                     addClip(clips,flash,4);
-                     //addClip(clips,wait,4);
-                     addClip(clips, new Prompt(), 1);
+                     addClip(clips, start, 1);
 
-                     addClip(clips,flash,3);
-                     //addClip(clips,wait,4);
-                     addClip(clips, new Prompt(), 1);
-                     addClip(clips,flash,6);
+                     for(int i = 0; i < sequenceArray.length; i++)
+                     {
+                         try{
+                             if(sequenceArray[i] != "")
+                             {
+                                addClip(clips, flash, Integer.decode(sequenceArray[i]));
+                                flashcount += Integer.decode(sequenceArray[i]);
+                             }
+                             addClip(clips, new Prompt(), 1);
+                         } catch (Exception e)
+                         {
 
-//                     addClip(clips,start,1);
-//                     addClip(clips,wait,4);
-//                     //addClip(clips,flash,1+random.nextInt(2));
-//                     addClip(clips,frontFlash,4);
-//                     //addClip(clips,wait,4);
-//                     addClip(clips, new Prompt(), 1);
-//
-//                     addClip(clips,frontFlash,3);
-//                     //addClip(clips,wait,4);
-//                     addClip(clips, new Prompt(), 1);
-//                     addClip(clips,frontFlash,6);
+                         }
+                     }
 
-
-                     flashcount = 13;
                  }
-//             if(clips.get(clips.size()-1)==flash&& !(clips.get(clips.size()-1)==wait&&clips.get(clips.size()-2)==wait&&clips.get(clips.size()-3)==wait&& clips.get(clips.size()-4)==wait))addClip(clips,wait,2);
-//                 {
-                 if(clips.get(clips.size()-1)==frontFlash&& !(clips.get(clips.size()-1)==wait&&clips.get(clips.size()-2)==wait&&clips.get(clips.size()-3)==wait&& clips.get(clips.size()-4)==wait))addClip(clips,wait,2);
-                 {
-
-                     addClip(clips,wait,2);
-                 }
-
              }
+//             else
+//             {
+//                 int rand = random.nextInt(6);
+//                 for(int i=0;i<5+rand;i++){
+//                     if(clips.size()==0)
+//                     {
+//                         addClip(clips,start,1);
+//                         addClip(clips,wait,4);
+//                         //addClip(clips,flash,1+random.nextInt(2));
+//                         addClip(clips,flash,4);
+//                         //addClip(clips,wait,4);
+//                         addClip(clips, new Prompt(), 1);
+//
+//                         addClip(clips,flash,3);
+//                         //addClip(clips,wait,4);
+//                         addClip(clips, new Prompt(), 1);
+//                         addClip(clips,flash,6);
+//
+//    //                     addClip(clips,start,1);
+//    //                     addClip(clips,wait,4);
+//    //                     //addClip(clips,flash,1+random.nextInt(2));
+//    //                     addClip(clips,frontFlash,4);
+//    //                     //addClip(clips,wait,4);
+//    //                     addClip(clips, new Prompt(), 1);
+//    //
+//    //                     addClip(clips,frontFlash,3);
+//    //                     //addClip(clips,wait,4);
+//    //                     addClip(clips, new Prompt(), 1);
+//    //                     addClip(clips,frontFlash,6);
+//
+//
+//                         flashcount = 13;
+//                     }
+//    //             if(clips.get(clips.size()-1)==flash&& !(clips.get(clips.size()-1)==wait&&clips.get(clips.size()-2)==wait&&clips.get(clips.size()-3)==wait&& clips.get(clips.size()-4)==wait))addClip(clips,wait,2);
+//    //                 {
+//                     if(clips.get(clips.size()-1)==frontFlash&& !(clips.get(clips.size()-1)==wait&&clips.get(clips.size()-2)==wait&&clips.get(clips.size()-3)==wait&& clips.get(clips.size()-4)==wait))addClip(clips,wait,2);
+//                     {
+//
+//                         addClip(clips,wait,2);
+//                     }
+//
+//                 }
+//             }
          } else {
 
              addClip(clips,start,1);

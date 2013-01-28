@@ -68,4 +68,5 @@
     <item name="seekbarFlashRotateSpeed" type="id"/>
     <item name="radioLightHead" type="id"/>
     <item name="radioLightRotate" type="id"/>
+    <item name="lighthouseSequenceText" type="id"/>
 </resources>

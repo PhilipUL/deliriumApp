@@ -469,10 +469,10 @@
                     android:textSize="10pt">
             </TextView>
             <EditText
-                    android:id="@+id/EditTextName"
+                    android:id="@id/lighthouseSequenceText"
                     android:layout_height="wrap_content"
-                    android:hint="@string/lighthouseSequence"
-                    android:inputType="textPersonName"
+                    android:hint="@string/lighthouseSequenceText"
+                    binding:text="lightHouseSequence"
                     android:layout_width="fill_parent">
             </EditText>
             <!--Put form controls here-->

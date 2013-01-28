@@ -1,11 +1,14 @@
 package skm.android.ViewModle.ViewModles.main;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SeekBar;
 import gueei.binding.Command;
 import gueei.binding.observables.FloatObservable;
+import gueei.binding.observables.StringObservable;
 import skm.android.Options;
 import skm.android.R;
 import skm.android.ViewModle.ViewModles.Shared;
@@ -55,6 +58,7 @@ public class OptionsViewModle extends ViewModleBase {
 
     public FloatObservable SeekBarFlashSpeed = new FloatObservable(0f);
     public FloatObservable SeekBarFlashSizeProgress = new FloatObservable(0f);
+    public StringObservable lightHouseSequence = new StringObservable("");
 
 
 
@@ -153,8 +157,30 @@ public class OptionsViewModle extends ViewModleBase {
         }
     };
 
+    public final TextWatcher lightHouseSequenceWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+            try{
+                Shared.setOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.sequence), s.toString(), getApplicationContext());
+            } catch (NullPointerException e)
+            {
+                System.out.println(e);
+            }
+        }
+
+        public void afterTextChanged(Editable editable) {
+            //To change body of implemented methods use File | Settings | File Templates.
+        }
+    } ;
+//
     private void initStatics() {
-        
+
+
+
+         lightHouseSequence.set(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey),getString(R.string.sequence),getApplicationContext()));
         Colours = Shared.getOptionStates(getString(R.string.Colours), getApplicationContext());
         Fonts= Shared.getOptionStates(getString(R.string.Font), getApplicationContext());
 
@@ -237,7 +263,5 @@ public class OptionsViewModle extends ViewModleBase {
 
         }
     };
-
-
 
 }

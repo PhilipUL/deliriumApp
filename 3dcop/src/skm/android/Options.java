@@ -42,7 +42,6 @@ public class Options extends ActivityBase
 
 
 
-
     public void onCheckboxClicked(View view) {
 
         boolean checked = ((CheckBox) view).isChecked();
@@ -254,7 +253,8 @@ public class Options extends ActivityBase
         initCheckBoxes();
         initSliders();
         this.getWindow().getDecorView().invalidate();
-
+        EditText lighthouseSequence = (EditText) findViewById(R.id.lighthouseSequenceText);
+        lighthouseSequence.addTextChangedListener(this.modle.lightHouseSequenceWatcher);
         BallViewViewModle.getInstance(getApplicationContext(), null).setPreviewMode();
 
     }
