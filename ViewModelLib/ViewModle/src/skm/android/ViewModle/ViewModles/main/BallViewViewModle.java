@@ -23,6 +23,18 @@ import java.util.Vector;
  * To change this template use File | Settings | File Templates.
  */
 public class BallViewViewModle extends ViewModleBase implements Serializable {
+    Boolean preview = false;
+
+    public void setPreviewMode() {
+        //To change body of created methods use File | Settings | File Templates.
+        preview = true;
+        clips  = new Vector<IClip>();
+        addClip(clips,test,1);
+
+
+
+    }
+
     interface IClip {
          boolean play(Canvas c, Context context);
      }
@@ -41,6 +53,10 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
 
     // do we want distractor balls
     private boolean distractorBalls;
+    private boolean randomise;
+    private int distractorBallsMax;
+    private int distractorBallsMin;
+    private int distractorBallSpeed;
 
     protected BallViewViewModle(Context c, View view){
         super(c);
@@ -61,23 +77,19 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
      public void  init() {
          //String answer = Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this);
          distractorBalls = Boolean.valueOf(Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this));
-         //distractorBalls = Boolean.getBoolean(Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this));
-         if(distractorBalls == true)
-         {
-            System.out.println("It's true");
-         }  else {
-             System.out.println("It's false");
-         }
-         //distractorBalls = true;
+         randomise = Boolean.valueOf(Shared.getOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), this));
+         //distractorBallsMax =  Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), this));
+//         distractorBallsMax =  Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), this));
+//         distractorBallSpeed = Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this));
 
 
          specifiedNoBounceCount = Integer.decode(Shared.getOptionAtribute(this.getString(R.string.balltestkey), this.getString(R.string.ballcount), this));
          if(specifiedNoBounceCount > 1)
          {
-             if(specifiedNoBounceCount > 10)
-             {
-                 System.out.println("It's true");
-             }
+//             if(specifiedNoBounceCount > 10)
+//             {
+//                 System.out.println("It's true");
+//             }
              bounceCountSpecified = true;
          } else
          {
@@ -89,13 +101,6 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
          addClip(clips,test,1);
          addClip(clips,end,1);
 
-//         addClip(clips,start,1);
-//         addClip(clips,test,1);
-//         addClip(clips,end,1);
-//
-//         addClip(clips,start,1);
-//         addClip(clips,test,1);
-//         addClip(clips,end,1);
      }
      private void addClip(List<IClip> clips,IClip clip,int times){
          for(int i=0;i<times;i++) clips.add(clip);
@@ -134,8 +139,10 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
          }
 
          public void onTouch(MotionEvent e) {
-
+             if(preview != true)
+             {
                   finished=true;
+             }
          }
      };
 
@@ -197,7 +204,7 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
                  Random random = new Random();
 
                  // ball should bounce for 12-17 seconds
-                 end=start + 12000+random.nextInt(5000);
+                  end=start + 12000+random.nextInt(5000);
 
                   balls=new Vector<IBall>();
                   bounds=c.getClipBounds();

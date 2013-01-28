@@ -154,6 +154,8 @@ public class Ball implements IBall{
             {
                 //velosity.y++;
                 velosity.y += fraction;
+            }  else if(velosity.y>initialVelosity.y){
+                velosity.y = initialVelosity.y;
             }
         }
 

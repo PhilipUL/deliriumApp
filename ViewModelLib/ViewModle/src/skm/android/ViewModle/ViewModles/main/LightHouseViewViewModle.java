@@ -81,29 +81,29 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
              for(int i=0;i<5+rand;i++){
                  if(clips.size()==0)
                  {
-//                     addClip(clips,start,1);
-//                     addClip(clips,wait,4);
-//                     //addClip(clips,flash,1+random.nextInt(2));
-//                     addClip(clips,flash,4);
-//                     //addClip(clips,wait,4);
-//                     addClip(clips, new Prompt(), 1);
-//
-//                     addClip(clips,flash,3);
-//                     //addClip(clips,wait,4);
-//                     addClip(clips, new Prompt(), 1);
-//                     addClip(clips,flash,6);
-
                      addClip(clips,start,1);
                      addClip(clips,wait,4);
                      //addClip(clips,flash,1+random.nextInt(2));
-                     addClip(clips,frontFlash,4);
+                     addClip(clips,flash,4);
                      //addClip(clips,wait,4);
                      addClip(clips, new Prompt(), 1);
 
-                     addClip(clips,frontFlash,3);
+                     addClip(clips,flash,3);
                      //addClip(clips,wait,4);
                      addClip(clips, new Prompt(), 1);
-                     addClip(clips,frontFlash,6);
+                     addClip(clips,flash,6);
+
+//                     addClip(clips,start,1);
+//                     addClip(clips,wait,4);
+//                     //addClip(clips,flash,1+random.nextInt(2));
+//                     addClip(clips,frontFlash,4);
+//                     //addClip(clips,wait,4);
+//                     addClip(clips, new Prompt(), 1);
+//
+//                     addClip(clips,frontFlash,3);
+//                     //addClip(clips,wait,4);
+//                     addClip(clips, new Prompt(), 1);
+//                     addClip(clips,frontFlash,6);
 
 
                      flashcount = 13;
@@ -189,14 +189,11 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         int lightYpoints[] = {150, lightpoint1Y, lightpoint2Y};
 
         Vector<Integer> lightVector = new Vector<Integer>(2,2);
-//        int x2Points[] = {200, 400, 360, 500, 340, 340, 260, 260, 240};
-//        int y2Points[] = {600, 600, 200, 200, 200, 100, 100, 200, 200};
 
-//        int x2Points[] = {200, 400, 360, 385, 385, 375, 375, 360, 360, 380, 380, 300, 220, 220, 240, 240, 210, 210, 200, 200, 240 };
-//        int y2Points[] = {600, 600, 200, 200, 180, 180, 190, 190, 100, 100, 90,  80,  90,  100, 100, 190, 190, 180, 180, 200, 200};
-
-        int x2Points[] = {200, 400, 360, 385, 385, 375, 375, 360, 360, 380, 380, 300, 220, 220, 240, 240, 180, 180, 170, 170, 240 };
-        int y2Points[] = {600, 600, 200, 200, 180, 180, 190, 190, 100, 100, 90,  80,  90,  100, 100, 190, 190, 180, 180, 200, 200};
+        //railing                // roof    //                 //left railing
+        int x2Points[] = {205, 395, 355, 380, 380, 370, 370, 355, 355, 375, 375, 300, 225, 225, 245, 245, 225, 225, 215, 215, 245 };
+        int y2Points[] = {600, 600, 190, 190, 170, 170, 180, 180, 90,  90,  80,  70,  80,  90,  90,  180, 180, 170, 170, 190, 190};
+        // top
 
         Paint paint = new Paint();
         int flashCountTracker = 0;
@@ -205,12 +202,16 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         int lightSpeedLateral = 50;
         int lightSpeedVirtical = 40;
 
-        public boolean play(Canvas c,Context context)
+        public boolean play(Canvas out,Context context)
         {
+            float aspect = out.getHeight()*1.0f/out.getWidth();
+            int width = out.getWidth();
+            Bitmap bitmap = Bitmap.createBitmap(width,Math.round(width*aspect), Bitmap.Config.RGB_565);
+            Canvas c = new Canvas(bitmap);
 
             Path lighthousePath = new Path();
             paint.setStyle(Paint.Style.FILL);
-            paint.setColor(Color.RED);
+            paint.setColor(Color.WHITE);
 
             lighthousePath.moveTo (x2Points[0], y2Points[0]);
 
@@ -218,14 +219,15 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                 lighthousePath.lineTo(x2Points[index], y2Points[index]);
             };
             Matrix translate = new Matrix();
-            translate.setTranslate(330,100);
+            translate.setTranslate(100,100);
             lighthousePath.transform(translate);
 
             c.drawPath(lighthousePath, paint);
 
             paint.setColor(Color.YELLOW);
-            c.drawCircle(635, 230, radius, paint);
+            c.drawCircle(400, 230, radius, paint);
 
+            out.drawBitmap(bitmap,c.getClipBounds(),out.getClipBounds(),paint);
             if(radius < 800)
             {
                 radius+= 5;
@@ -258,15 +260,16 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         int lightYpoints[] = {150, lightpoint1Y, lightpoint2Y};
 
         Vector<Integer> lightVector = new Vector<Integer>(2,2);
-//        int x2Points[] = {200, 400, 360, 500, 340, 340, 260, 260, 240};
-//        int y2Points[] = {600, 600, 200, 200, 200, 100, 100, 200, 200};
 
-//        int x2Points[] = {200, 400, 360, 385, 385, 375, 375, 360, 360, 380, 380, 300, 220, 220, 240, 240, 210, 210, 200, 200, 240 };
+                                                   //railing                // roof    //                 //left railing
+//        int x2Points[] = {200, 400, 360, 385, 385, 375, 375, 360, 360, 380, 380, 300, 220, 220, 240, 240, 220, 220, 210, 210, 240 };
 //        int y2Points[] = {600, 600, 200, 200, 180, 180, 190, 190, 100, 100, 90,  80,  90,  100, 100, 190, 190, 180, 180, 200, 200};
+//                                                                                                               // top
 
-        int x2Points[] = {200, 400, 360, 385, 385, 375, 375, 360, 360, 380, 380, 300, 220, 220, 240, 240, 180, 180, 170, 170, 240 };
-        int y2Points[] = {600, 600, 200, 200, 180, 180, 190, 190, 100, 100, 90,  80,  90,  100, 100, 190, 190, 180, 180, 200, 200};
-
+                                                   //railing                // roof    //                 //left railing
+        int x2Points[] = {205, 395, 355, 380, 380, 370, 370, 355, 355, 375, 375, 300, 225, 225, 245, 245, 225, 225, 215, 215, 245 };
+        int y2Points[] = {600, 600, 190, 190, 170, 170, 180, 180, 90,  90,  80,  70,  80,  90,  90,  180, 180, 170, 170, 190, 190};
+                                                                                                                     // top
         Paint paint = new Paint();
         int flashCountTracker = 0;
         boolean rightFlash = false;
@@ -276,9 +279,10 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         public boolean play(Canvas c,Context context)
         {
 
+
             Path lighthousePath = new Path();
             paint.setStyle(Paint.Style.FILL);
-            paint.setColor(Color.RED);
+            paint.setColor(Color.WHITE);
 
             lighthousePath.moveTo (x2Points[0], y2Points[0]);
 
@@ -287,7 +291,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
             };
 
             Matrix translate = new Matrix();
-            translate.setTranslate(330,100);
+            translate.setTranslate(100,100);
             lighthousePath.transform(translate);
 
             c.drawPath(lighthousePath, paint);
@@ -332,7 +336,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightYpoints[1] = lightpoint1Y;
                     lightYpoints[2] = lightpoint2Y;
                 }
-                else if (flashCountTracker < 3)
+                else if (flashCountTracker < 5)
                 {
                     // flash
                     Paint yellow = new Paint();
@@ -396,6 +400,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightYpoints[1] = lightpoint1Y;
                     lightYpoints[2] = lightpoint2Y;
 
+                    flashCountTracker = 0;
                 }
             }
 
@@ -404,6 +409,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
             for (int index = 1; index < lightYpoints.length; index++) {
                 lightPath.lineTo(lightXpoints[index], lightYpoints[index]);
             };
+            translate.setTranslate(100,90);
             lightPath.transform(translate);
 
 
@@ -415,6 +421,9 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
 
             c.drawPath(lightPath, lightPaint);
+
+
+
             count=(count +1)%(56);
             //setFrame(c,getFrame(bmp,count,20,1));
             lastTime=currentTime;
@@ -446,7 +455,12 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
          boolean finished = false;
          Paint paint = null;
 
-         public boolean play(Canvas c,Context context){
+         public boolean play(Canvas out,Context context){
+             float aspect = out.getHeight()*1.0f/out.getWidth();
+             int width = out.getWidth();
+             Bitmap bitmap = Bitmap.createBitmap(width,Math.round(width*aspect), Bitmap.Config.RGB_565);
+             Canvas c = new Canvas(bitmap);
+
              if(paint==null){
                  String currentSize = Shared.getOptionAtribute(context.getString(R.string.FontSize), getString(R.string.current), context);
                  String textColour = Shared.getOptionAtribute(context.getString(R.string.Colours), getString(R.string.text), context);
@@ -463,6 +477,9 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
              c.drawText("tap the screen",50,50,paint);
              c.drawText("to start",50,100,paint);
              c.drawText("the test",50,150,paint);
+
+             out.drawBitmap(bitmap,c.getClipBounds(),out.getClipBounds(),paint);
+
              return finished;
          }
 
@@ -477,8 +494,13 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         boolean finished = false;
         Paint paint = null;
 
-        public boolean play(Canvas c,Context context)
+        public boolean play(Canvas out,Context context)
         {
+            float aspect = out.getHeight()*1.0f/out.getWidth();
+            int width = out.getWidth();
+            Bitmap bitmap = Bitmap.createBitmap(width,Math.round(width*aspect), Bitmap.Config.RGB_565);
+            Canvas c = new Canvas(bitmap);
+
             if(paint==null){
                 String currentSize = Shared.getOptionAtribute(context.getString(R.string.FontSize), getString(R.string.current), context);
                 String textColour = Shared.getOptionAtribute(context.getString(R.string.Colours), getString(R.string.text), context);
@@ -491,6 +513,9 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
             c.drawText("Touch Screen for",50,50,paint);
             c.drawText("the next flash",50,100,paint);
             c.drawText("test",50,150,paint);
+
+            out.drawBitmap(bitmap,c.getClipBounds(),out.getClipBounds(),paint);
+
             return finished;
         }
 
@@ -504,7 +529,13 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
          boolean finished = false;
          Paint paint = null;
 
-         public boolean play(Canvas c,Context context){
+         public boolean play(Canvas out,Context context){
+
+             float aspect = out.getHeight()*1.0f/out.getWidth();
+             int width = out.getWidth();
+             Bitmap bitmap = Bitmap.createBitmap(width,Math.round(width*aspect), Bitmap.Config.RGB_565);
+             Canvas c = new Canvas(bitmap);
+
              if(paint==null){
                  String currentSize = Shared.getOptionAtribute(context.getString(R.string.FontSize), getString(R.string.current), context);
                  String textColour = Shared.getOptionAtribute(context.getString(R.string.Colours), getString(R.string.text), context);
@@ -517,8 +548,11 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
              c.drawText("please enter",50,50,paint);
              c.drawText("the number of ",50,100,paint);
              c.drawText("flashes below",50,150,paint);
+             out.drawBitmap(bitmap,c.getClipBounds(),out.getClipBounds(),paint);
+
              return finished;
          }
+
 
          public void onTouch(MotionEvent e) {
 

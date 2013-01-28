@@ -60,8 +60,10 @@ some of the more repetitive tasks involved in administering these tests. </strin
     <string name="DistractionBallMaxSpeed">Distraction Ball Max Speed:</string>
     <string name="DistractionBallMinSpeed">Distraction Ball Min Speed:</string>
     <string name="DistractionBallSpeed">Distraction Ball Speed:</string>
-
-
+    <string name="radio_rotate_flash">Rotating Flash</string>
+    <string name="radio_headon_flash">Head-on Flash</string>
+    <string name="lightHouseSequence">Lighthouse Flash Sequence</string>
+    <string name="lighthouseSequence">3,2,4 (= 3 flashes, pause, 2 flashes, pause, 4 flashes ..etc)</string>
 
 
 </resources>

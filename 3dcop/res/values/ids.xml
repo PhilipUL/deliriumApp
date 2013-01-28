@@ -65,4 +65,7 @@
     <item name="FontTextTargetMaxSpeed" type="id"/>
     <item name="SaveBallTest" type="id"/>
     <item name="PreviewBallTest" type="id"/>
+    <item name="seekbarFlashRotateSpeed" type="id"/>
+    <item name="radioLightHead" type="id"/>
+    <item name="radioLightRotate" type="id"/>
 </resources>

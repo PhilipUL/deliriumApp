@@ -56,38 +56,6 @@
                      android:layout_height="fill_parent" android:prompt="@string/selectAFont"
                     android:layout_margin="5dp" android:layout_weight=".5"/>
         </LinearLayout>
-        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
-                      android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
-            <TextView android:layout_height="fill_parent" android:layout_width="100dp"
-                      android:gravity="center" android:text="Ball Count:" android:layout_margin="5dp"
-                      android:id="@id/FontText" android:layout_weight=".5"/>
-            <Spinner android:id="@id/BallCountChoser"
-                     android:layout_width="150dp"
-                     android:layout_height="fill_parent"
-                     android:layout_margin="5dp"
-                     android:layout_weight=".5"/>
-        </LinearLayout>
-
-        <LinearLayout android:layout_width="fill_parent"
-                      android:layout_height="75dp"
-                      android:minHeight="50dp"
-                      android:maxHeight="100dp"
-                      android:orientation="horizontal"
-                      android:gravity="center"
-                      android:layout_margin="5dp">
-            <TextView android:layout_height="fill_parent"
-                      android:layout_width="100dp"
-                      android:gravity="center"
-                      android:text="Lighthouse Flash Count:"
-                      android:layout_margin="5dp"
-                      android:id="@id/FontText"
-                      android:layout_weight=".5"/>
-            <Spinner android:id="@id/LighthouseFlashCountChoser"
-                     android:layout_width="150dp"
-                     android:layout_height="fill_parent"
-                     android:layout_margin="5dp"
-                     android:layout_weight=".5"/>
-        </LinearLayout>
 
         <LinearLayout android:layout_width="fill_parent"
                       android:layout_height="75dp"
@@ -106,17 +74,29 @@
                       android:id="@id/FontTextBouncingBallHead"/>
         </LinearLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                      xmlns:binding="http://www.gueei.com/android-binding/"
-                      android:orientation="vertical"
-                      android:layout_width="fill_parent"
-                      android:layout_height="fill_parent"
-                      android:gravity="center">
-                <skm.android.views.BallView
-                        android:layout_height="fill_parent"
-                        android:layout_width="fill_parent"
-                        android:layout_marginBottom="100dp"/>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="75dp" android:minHeight="50dp" android:maxHeight="100dp"
+                      android:orientation="horizontal" android:gravity="center" android:layout_margin="5dp">
+            <TextView android:layout_height="fill_parent" android:layout_width="100dp"
+                      android:gravity="center" android:text="Ball Count:" android:layout_margin="5dp"
+                      android:id="@id/FontText" android:layout_weight=".5"/>
+            <Spinner android:id="@id/BallCountChoser"
+                     android:layout_width="150dp"
+                     android:layout_height="fill_parent"
+                     android:layout_margin="5dp"
+                     android:layout_weight=".5"/>
         </LinearLayout>
+
+        <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+                      <!--xmlns:binding="http://www.gueei.com/android-binding/"-->
+                      <!--android:orientation="vertical"-->
+                      <!--android:layout_width="wrap_content"-->
+                      <!--android:layout_height="wrap_content"-->
+                      <!--android:gravity="center">-->
+                <!--<skm.android.views.BallView-->
+                        <!--android:layout_height="400dp"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_marginBottom="100dp"/>-->
+        <!--</LinearLayout>-->
 
         <LinearLayout android:layout_width="fill_parent"
                       android:layout_height="75dp"
@@ -438,7 +418,7 @@
                     binding:onClick="PreviewBallTestOptions" />
         </LinearLayout>
 
-
+<!-- Light house options begin-->
         <LinearLayout android:layout_width="fill_parent"
                       android:layout_height="75dp"
                       android:minHeight="50dp"
@@ -452,9 +432,10 @@
                       android:gravity="center"
                       android:layout_margin="5dp"
                       android:layout_weight=".5"
-                      android:text="Lighthouse Head-On Flash Options"
+                      android:text="Lighthouse Options"
                       android:id="@id/FontTextFlashFront"/>
         </LinearLayout>
+
         <LinearLayout android:layout_width="fill_parent"
                       android:layout_height="75dp"
                       android:minHeight="50dp"
@@ -462,55 +443,183 @@
                       android:orientation="horizontal"
                       android:gravity="center"
                       android:layout_margin="5dp">
-
             <TextView android:layout_height="fill_parent"
                       android:layout_width="100dp"
                       android:gravity="center"
+                      android:text="Lighthouse Flash Count:"
                       android:layout_margin="5dp"
-                      android:layout_weight=".5"
-                      binding:text="CONCAT('Lighthouse Flash Size:', ' ', SeekBarFlashSizeProgress)"
-                      android:id="@id/FontTextFlashSize"
-                      />
-
-            <SeekBar
+                      android:id="@id/FontText"
+                      android:layout_weight=".5"/>
+            <Spinner android:id="@id/LighthouseFlashCountChoser"
                      android:layout_width="150dp"
-                     android:layout_height="wrap_content"
+                     android:layout_height="fill_parent"
                      android:layout_margin="5dp"
-                     android:layout_weight=".5"
-                     android:id="@id/seekbarFlashSize"
-                     android:max="20"
-                     android:progress="0"
-                     binding:onSeekBarChange="SliderMovedFlashSize"
-                     binding:progress="SeekBarFlashSizeProgress"/>
+                     android:layout_weight=".5"/>
         </LinearLayout>
 
-        <LinearLayout android:layout_width="fill_parent"
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:orientation="vertical"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:id="@+id/TextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lightHouseSequence"
+                    android:textSize="10pt">
+            </TextView>
+            <EditText
+                    android:id="@+id/EditTextName"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lighthouseSequence"
+                    android:inputType="textPersonName"
+                    android:layout_width="fill_parent">
+            </EditText>
+            <!--Put form controls here-->
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="75dp"
                       android:minHeight="50dp"
                       android:maxHeight="100dp"
                       android:orientation="horizontal"
                       android:gravity="center"
                       android:layout_margin="5dp">
-
-            <TextView android:layout_height="fill_parent"
-                      android:layout_width="100dp"
-                      android:gravity="center"
-                      android:layout_margin="5dp"
-                      android:layout_weight=".5"
-                      binding:text="CONCAT('Lighthouse Flash Speed:', ' ', SeekBarFlashSpeed)"
-                      android:id="@id/FontTextFlashSpeed"
-                      />
-
-            <SeekBar
-                    android:layout_width="150dp"
+            <RadioButton
+                    android:id="@id/radioLightHead"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight=".5"
-                    android:id="@id/seekbarFlashSpeed"
-                    android:max="20"
-                    android:progress="0"
-                    binding:progress="SeekBarFlashSpeed"/>
+                    android:text="@string/radio_headon_flash"
+                    android:layout_marginRight="75dp"
+                    android:onClick="onRadioButtonClicked"
+
+                    />
+            <RadioButton
+                    android:id="@id/radioLightRotate"
+                    android:layout_marginLeft="75dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_rotate_flash"
+                    android:onClick="onRadioButtonClicked"/>
         </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:minHeight="50dp"
+                android:maxHeight="200dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="5dp">
+                <LinearLayout
+                        android:layout_weight = "1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:minHeight="50dp"
+                        android:maxHeight="200dp"
+                        android:orientation="vertical"
+                        android:gravity="left"
+                        android:layout_margin="5dp"
+                        android:visibility="visible">
+                        <LinearLayout android:layout_width="fill_parent"
+                                      android:layout_height="75dp"
+                                      android:minHeight="50dp"
+                                      android:maxHeight="100dp"
+                                      android:orientation="horizontal"
+                                      android:gravity="center"
+                                      android:layout_margin="5dp">
+
+                            <TextView android:layout_height="fill_parent"
+                                      android:layout_width="100dp"
+                                      android:gravity="center"
+                                      android:layout_margin="5dp"
+                                      android:layout_weight=".5"
+                                      binding:text="CONCAT('Lighthouse Flash Size:', ' ', SeekBarFlashSizeProgress)"
+                                      android:id="@id/FontTextFlashSize"
+                                      />
+
+                            <SeekBar
+                                     android:layout_width="150dp"
+                                     android:layout_height="wrap_content"
+                                     android:layout_margin="5dp"
+                                     android:layout_weight=".5"
+                                     android:id="@id/seekbarFlashSize"
+                                     android:max="20"
+                                     android:progress="0"
+                                     binding:onSeekBarChange="SliderMovedFlashSize"
+                                     binding:progress="SeekBarFlashSizeProgress"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="fill_parent"
+                                      android:layout_height="75dp"
+                                      android:minHeight="50dp"
+                                      android:maxHeight="100dp"
+                                      android:orientation="horizontal"
+                                      android:gravity="center"
+                                      android:layout_margin="5dp">
+
+                            <TextView android:layout_height="fill_parent"
+                                      android:layout_width="100dp"
+                                      android:gravity="center"
+                                      android:layout_margin="5dp"
+                                      android:layout_weight=".5"
+                                      binding:text="CONCAT('Lighthouse Flash Speed:', ' ', SeekBarFlashSpeed)"
+                                      android:id="@id/FontTextFlashSpeed"
+                                    />
+
+                            <SeekBar
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight=".5"
+                                    android:id="@id/seekbarFlashSpeed"
+                                    android:max="20"
+                                    android:progress="0"
+                                    binding:progress="SeekBarFlashSpeed"/>
+                        </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_weight = "1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:minHeight="50dp"
+                        android:maxHeight="200dp"
+                        android:orientation="vertical"
+                        android:gravity="right"
+                        android:layout_margin="5dp"
+                        android:visibility="visible">
+
+                    <LinearLayout android:layout_width="fill_parent"
+                                  android:layout_height="75dp"
+                                  android:minHeight="50dp"
+                                  android:maxHeight="100dp"
+                                  android:orientation="horizontal"
+                                  android:gravity="center"
+                                  android:layout_margin="5dp">
+
+                        <TextView android:layout_height="fill_parent"
+                                  android:layout_width="100dp"
+                                  android:gravity="center"
+                                  android:layout_margin="5dp"
+                                  android:layout_weight=".5"
+                                  binding:text="CONCAT('Lighthouse Flash Rotate Speed:', ' ', SeekBarFlashRotateSpeed)"
+                                  android:id="@id/FontTextFlashSpeed"
+                                />
+
+                        <SeekBar
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight=".5"
+                                android:id="@id/seekbarFlashRotateSpeed"
+                                android:max="20"
+                                android:progress="0"
+                                binding:progress="SeekBarFlashRotateSpeed"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+        </LinearLayout>
+
+
         <LinearLayout android:layout_width="fill_parent"
                       android:layout_height="75dp"
                       android:minHeight="50dp"

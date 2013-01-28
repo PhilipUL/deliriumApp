@@ -8,6 +8,7 @@ import android.widget.*;
 import gueei.binding.Binder;
 import skm.android.ViewModle.ViewModles.Shared;
 import skm.android.ViewModle.ViewModles.SpinnerArrayAdapter;
+import skm.android.ViewModle.ViewModles.main.BallViewViewModle;
 import skm.android.ViewModle.ViewModles.main.OptionsViewModle;
 
 import java.util.ArrayList;
@@ -39,6 +40,9 @@ public class Options extends ActivityBase
         //SharedPreferences pref = context.getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
     }
 
+
+
+
     public void onCheckboxClicked(View view) {
 
         boolean checked = ((CheckBox) view).isChecked();
@@ -50,6 +54,7 @@ public class Options extends ActivityBase
         }
 
         checkDistractionSliderState();
+
     }
 
     public void onRadioButtonClicked(View view) {
@@ -183,6 +188,7 @@ public class Options extends ActivityBase
                 distractionBarMinSpeed.setEnabled(false);
             }
         }
+        //BallViewViewModle.getInstance(getApplicationContext(), null).setPreviewMode();
     }
 
     private void initSpinners() {
@@ -249,6 +255,7 @@ public class Options extends ActivityBase
         initSliders();
         this.getWindow().getDecorView().invalidate();
 
+        BallViewViewModle.getInstance(getApplicationContext(), null).setPreviewMode();
 
     }
 

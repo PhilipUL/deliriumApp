@@ -1,7 +1,9 @@
 package skm.android.views;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,9 +71,13 @@ public class LighthouseView extends View {
 //        if(count<clips.size()&&clips.get(count).play(c,getContext()))count++;
 //        invalidate();
 //        }
-
+//        float aspect = c.getHeight()*1.0f/c.getWidth();
+//        int width = 1000;
+        Bitmap bitmap = Bitmap.createBitmap(800,600, Bitmap.Config.RGB_565);
+        Canvas out = new Canvas(bitmap);
 //        c.drawRect(getLeft(), getTop() + p.getStrokeWidth()/2, getRight(), getBottom(), p);
-         modle.onDraw(c);
+         modle.onDraw(out);
+        c.drawBitmap(bitmap,out.getClipBounds(),c.getClipBounds(),new Paint());
         invalidate();
     }
 
