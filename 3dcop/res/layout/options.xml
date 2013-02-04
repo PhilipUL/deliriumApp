@@ -574,7 +574,8 @@
                                     android:id="@id/seekbarFlashSpeed"
                                     android:max="20"
                                     android:progress="0"
-                                    binding:progress="SeekBarFlashSpeed"/>
+                                    binding:progress="SeekBarFlashSpeed"
+                                    binding:onSeekBarChange="SliderMovedFlashSpeed"/>
                         </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -601,7 +602,7 @@
                                   android:gravity="center"
                                   android:layout_margin="5dp"
                                   android:layout_weight=".5"
-                                  binding:text="CONCAT('Lighthouse Flash Rotate Speed:', ' ', SeekBarFlashRotateSpeed)"
+                                  binding:text="CONCAT('Lighthouse Flash Rotate Speed:', ' ', SeekBarFlashRotateSpeedNumber)"
                                   android:id="@id/FontTextFlashSpeed"
                                 />
 
@@ -613,7 +614,8 @@
                                 android:id="@id/seekbarFlashRotateSpeed"
                                 android:max="20"
                                 android:progress="0"
-                                binding:progress="SeekBarFlashRotateSpeed"/>
+                                binding:progress="SeekBarFlashRotateSpeedNumber"
+                                binding:onSeekBarChange="SliderMovedRotateSpeed"/>
                     </LinearLayout>
 
                 </LinearLayout>

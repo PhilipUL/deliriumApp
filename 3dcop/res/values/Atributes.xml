@@ -17,5 +17,7 @@
     <string name="checked">checked</string>
     <string name="sequence">sequence</string>
     <string name="rotate">rotate</string>
-
+    <string name="rotateSpeed">rotateSpeed</string>
+    <string name="flashSize">flashSize</string>
+    <string name="headonSpeed">headonSpeed</string>
 </resources>

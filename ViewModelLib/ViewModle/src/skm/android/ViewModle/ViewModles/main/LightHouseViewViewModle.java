@@ -31,6 +31,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
     interface ITouchClip extends IClip{
          void onTouch(MotionEvent e);
      }
+    //int lightHouseFlashSpeed = Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.))
     List<IClip> clips;
     View view;
     private int flashcount =0;
@@ -39,6 +40,9 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
     private boolean flashesSpecified;
     private int noFlashesSpecified;
+    float headonSpeed;
+    float rotateSpeed;
+    float flashSize;
 
     protected LightHouseViewViewModle(Context c,View view)
     {
@@ -62,6 +66,11 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
          noFlashesSpecified = Integer.parseInt(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashcount), this));
          String sequence = Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.sequence), this);
          Boolean rotate = Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this));
+
+         headonSpeed= (Float.parseFloat(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.headonSpeed), this)))/10000;
+         rotateSpeed = (Float.parseFloat(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotateSpeed), this)))/10000;
+         flashSize = (Float.parseFloat(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashSize), this)))/10000;
+
          //String sequence = "3,2,1";
          String[] sequenceArray = sequence.split(",");
 
@@ -103,7 +112,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                                 }
                                 flashcount += Integer.decode(sequenceArray[i]);
                              }
-                             addClip(clips, new Prompt(), 1);
+                             addClip(clips, wait, 8);
                          } catch (Exception e)
                          {
 
@@ -116,7 +125,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
          } else {
 
              addClip(clips,start,1);
-             addClip(clips,wait,4);
+             addClip(clips,wait,6);
              if(rotate == true)
              {
                 addClip(clips,flash,noFlashesSpecified);
@@ -169,7 +178,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         int lightpoint1Y = 150;
         int lightpoint2X = 300;
         int lightpoint2Y = 150;
-        int radius = 0;
+        int radius = 2;
 
         int lightXpoints[] = {350, lightpoint1X , lightpoint2X};
         int lightYpoints[] = {150, lightpoint1Y, lightpoint2Y};
@@ -187,6 +196,9 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
         int lightSpeedLateral = 50;
         int lightSpeedVirtical = 40;
+
+        boolean lightExpanding = true;
+
 
         public boolean play(Canvas out,Context context)
         {
@@ -213,18 +225,61 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
             paint.setColor(Color.YELLOW);
             c.drawCircle(400, 230, radius, paint);
 
+            float expansionTemp = (int) (radius/0.8);
+            expansionTemp = expansionTemp*headonSpeed;
+            int expansion = (int) expansionTemp;
+
+            boolean firstDecrease = true;
+
             out.drawBitmap(bitmap,c.getClipBounds(),out.getClipBounds(),paint);
-            if(radius < 800)
+            if(lightExpanding == true)
             {
-                radius+= 5;
-                if(radius > 300)
+                if(radius < 800 && (radius+expansion) < 800)
                 {
-                    radius+=5;
+
+
+                    if(expansion < 1)
+                    {
+                        radius += 1;
+                    }else{
+                        radius+= expansion;   //////////////////////////////// speed variable
+                    }
+
+
+                } else {
+                    lightExpanding = false;
                 }
                 return false;
-            } else{
-                return true;
+            } else {
+
+                if(firstDecrease == true)
+                {
+                    // the first time we get to here and try to reduce the size of the circle, the expansion variable might actually be bigger than the circle and cause it to disapear.
+                    // to prevent this, reduce the expansion variable by one step before applying the rest of the logic
+                    double temp = expansion;
+                    temp = expansion*0.8;
+                    expansion = (int) temp;
+    //                expansionTemp = (int) (radius/0.8);
+    //                expansionTemp = expansionTemp*headonSpeed;
+    //                expansion = (int) expansionTemp;
+                    firstDecrease = false;
+                }
+                if(radius > 10 && (radius-expansion) > 10)
+                {
+                    if(expansion < 1)
+                    {
+                        radius -= 1;
+                    }else{
+                        radius-= expansion;   //////////////////////////////// speed variable
+                    }
+
+                } else {
+                    lightExpanding = true;
+                    return true;
+                }
+                return false;
             }
+
 
 
 
@@ -322,6 +377,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightYpoints[1] = lightpoint1Y;
                     lightYpoints[2] = lightpoint2Y;
                 }
+                // flashCountTracker is a variable used to make sure that the yellow square, that represents the flash, stays on screen for 4 iterations
                 else if (flashCountTracker < 5)
                 {
                     // flash
@@ -410,7 +466,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
 
 
-            count=(count +1)%(56);
+            count=(count +1)%(58);
             //setFrame(c,getFrame(bmp,count,20,1));
             lastTime=currentTime;
             if(count==0)

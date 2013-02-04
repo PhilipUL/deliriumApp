@@ -68,8 +68,8 @@ public class Options extends ActivityBase
         final RadioButton radioLightHead = (RadioButton)findViewById(R.id.radioLightHead);
         final RadioButton radioLightRotate = (RadioButton)findViewById(R.id.radioLightRotate);
 
-        radioLightHead.setChecked(Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this)));
-        radioLightRotate.setChecked(!Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this)));
+        radioLightHead.setChecked(!Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this)));
+        radioLightRotate.setChecked(Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this)));
 
     }
 
@@ -286,6 +286,17 @@ public class Options extends ActivityBase
 
         SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
         distractionBarSpeed.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this)));
+
+
+
+        SeekBar lighthouseFlashRotateSpeedSlider = (SeekBar) findViewById(R.id.seekbarFlashRotateSpeed);
+        lighthouseFlashRotateSpeedSlider.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotateSpeed), this))); // get the string back from the xml file, and convert it to an int
+
+        SeekBar lighthouseFlashSizeSlider= (SeekBar) findViewById(R.id.seekbarFlashSize);
+        lighthouseFlashSizeSlider.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashSize), this)));
+
+        SeekBar lighthouseFlashSpeedHeadon = (SeekBar) findViewById(R.id.seekbarFlashSpeed);
+        lighthouseFlashSpeedHeadon.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.headonSpeed), this)));
 
     }
 

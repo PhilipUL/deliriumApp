@@ -56,6 +56,7 @@ public class OptionsViewModle extends ViewModleBase {
     public FloatObservable SeekBarMinDistractionSpeed = new FloatObservable(0f);
     public FloatObservable SeekBarMaxDistractionSpeed = new FloatObservable(0f);
 
+    public FloatObservable SeekBarFlashRotateSpeedNumber = new FloatObservable(0f);
     public FloatObservable SeekBarFlashSpeed = new FloatObservable(0f);
     public FloatObservable SeekBarFlashSizeProgress = new FloatObservable(0f);
     public StringObservable lightHouseSequence = new StringObservable("");
@@ -71,16 +72,35 @@ public class OptionsViewModle extends ViewModleBase {
         }
     };
 
+    public final Command SliderMovedFlashSize = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashSize), String.valueOf(bar.getProgress()), getApplicationContext());
+        }
+    };
 
+    public final Command SliderMovedFlashSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.headonSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
+        }
+    };
+
+    public final Command SliderMovedRotateSpeed = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotateSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
+        }
+    };
 
     public final Command SliderMovedMaxSpeed = new Command(){
         @Override
         public void Invoke(View arg0, Object... arg1) {
             SeekBar bar = (SeekBar)  arg0;
             Shared.setOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), String.valueOf(bar.getProgress()), getApplicationContext());
-
-//            TextView targetMaxSpeed = (TextView) findViewById(R.id.FontTextTargetMaxSpeed);
-//            targetMaxSpeed.setText("Target Ball Max Speed: "+Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), this));
 
         }
     };
@@ -156,6 +176,7 @@ public class OptionsViewModle extends ViewModleBase {
 
         }
     };
+
 
     public final TextWatcher lightHouseSequenceWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
