@@ -65,6 +65,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
          noFlashesSpecified = Integer.parseInt(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashcount), this));
          String sequence = Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.sequence), this);
+         sequence = sequence.trim();
          Boolean rotate = Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotate), this));
 
          headonSpeed= (Float.parseFloat(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.headonSpeed), this)))/10000;
@@ -73,6 +74,10 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
          //String sequence = "3,2,1";
          String[] sequenceArray = sequence.split(",");
+         for(int i = 0; i < sequenceArray.length; i++)
+         {
+             sequenceArray[i] = sequenceArray[i].trim();
+         }
 
          if(noFlashesSpecified > 0)
          {
@@ -315,10 +320,39 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
         int flashCountTracker = 0;
         boolean rightFlash = false;
 
-        int lightSpeedLateral = 50;
-        int lightSpeedVirtical = 40;
+
+        int lightSpeedLateral = 100;   // variables for speed
+        int lightSpeedVirtical = 80;
+        boolean first = true;
+
+
+        boolean fullRotation = false;
         public boolean play(Canvas c,Context context)
         {
+
+            if(first == true)
+            {
+
+                if(rotateSpeed > 0)
+                {
+                    float temp = lightSpeedLateral* rotateSpeed;
+                    lightSpeedLateral = (int) temp;
+
+                    temp = lightSpeedVirtical * rotateSpeed;
+                    lightSpeedVirtical = (int) temp;
+                }
+
+                if(lightSpeedLateral <= 0)
+                {
+                    lightSpeedLateral = 1;
+                }
+
+                if(lightSpeedVirtical <= 0)
+                {
+                    lightSpeedVirtical = 1;
+                }
+                first = false;
+            }
 
 
             Path lighthousePath = new Path();
@@ -407,7 +441,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightYpoints[1] = lightpoint1Y;
                     lightYpoints[2] = lightpoint2Y;
                 }
-                else if(lightpoint1X < 300)
+                else if(lightpoint1X < 240 && (lightpoint1X + lightSpeedLateral) < 240)
                 {
 
                     lightpoint1X +=lightSpeedLateral;
@@ -416,14 +450,14 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightXpoints[1] = lightpoint1X ;
                     lightXpoints[2] = lightpoint2X ;
 
-                    if(lightpoint1X%3 == 0)
-                    {
-                        lightpoint1Y -= 3;
-                        lightpoint2Y += 3;
-                        lightYpoints[1] = lightpoint1Y;
-                        lightYpoints[2] = lightpoint2Y;
-
-                    }
+//                    if(lightpoint1X%3 == 0)
+//                    {
+//                        lightpoint1Y -= 3;
+//                        lightpoint2Y += 3;
+//                        lightYpoints[1] = lightpoint1Y;
+//                        lightYpoints[2] = lightpoint2Y;
+//
+//                    }
                     //                lightYpoints[1] = ++lightpoint1Y;
                     //                lightYpoints[2] = --lightpoint2Y;
                 } else {
@@ -443,6 +477,8 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightYpoints[2] = lightpoint2Y;
 
                     flashCountTracker = 0;
+                    fullRotation = true;
+
                 }
             }
 
@@ -469,12 +505,19 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
             count=(count +1)%(58);
             //setFrame(c,getFrame(bmp,count,20,1));
             lastTime=currentTime;
-            if(count==0)
+            if(fullRotation == true)
             {
+                fullRotation = false;
                 return true;
             }else{
                 return false;
             }
+//            if(count==0)
+//            {
+//                return true;
+//            }else{
+//                return false;
+//            }
 
 
 
