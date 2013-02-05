@@ -297,10 +297,10 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
     {
         long currentTime=System.currentTimeMillis() ,lastTime=System.currentTimeMillis();
         private  int count =0;
-        int lightpoint1X = 300;
-        int lightpoint1Y = 150;
-        int lightpoint2X = 300;
-        int lightpoint2Y = 150;
+        int lightpoint1X = 360;
+        int lightpoint1Y = 140;
+        int lightpoint2X = 360;
+        int lightpoint2Y = 160;
 
         int lightXpoints[] = {350, lightpoint1X , lightpoint2X};
         int lightYpoints[] = {150, lightpoint1Y, lightpoint2Y};
@@ -392,14 +392,14 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     lightXpoints[1] = lightpoint1X ;
                     lightXpoints[2] = lightpoint2X ;
 
-                    if(lightpoint1X%3 == 0)
-                    {
-                        lightpoint1Y += 3;
-                        lightpoint2Y -= 3;
-                        lightYpoints[1] = lightpoint1Y;
-                        lightYpoints[2] = lightpoint2Y;
-
-                    }
+//                    if(lightpoint1X%3 == 0)
+//                    {
+//                        lightpoint1Y += 3;
+//                        lightpoint2Y -= 3;
+//                        lightYpoints[1] = lightpoint1Y;
+//                        lightYpoints[2] = lightpoint2Y;
+//
+//                    }
     //                lightYpoints[1] = ++lightpoint1Y;
     //                lightYpoints[2] = --lightpoint2Y;
                 }
@@ -433,7 +433,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                     rightFlash = true;
                 }
             } else {
-                if(lightpoint2Y < 106)
+                if(lightpoint2Y < 140 && (lightpoint2Y + lightSpeedVirtical) < 140)
                 {
                     lightpoint1Y -= lightSpeedVirtical;
                     lightpoint2Y += lightSpeedVirtical;
@@ -443,6 +443,9 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                 }
                 else if(lightpoint1X < 240 && (lightpoint1X + lightSpeedLateral) < 240)
                 {
+
+                    lightYpoints[1] = 140 ;
+                    lightYpoints[2] = 160 ;
 
                     lightpoint1X +=lightSpeedLateral;
                     lightpoint2X +=lightSpeedLateral;
@@ -463,10 +466,10 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
                 } else {
                     //reinitalise
                     rightFlash = false;
-                    lightpoint1X = 300;
-                    lightpoint1Y = 150;
-                    lightpoint2X = 300;
-                    lightpoint2Y = 150;
+                    lightpoint1X = 360;
+                    lightpoint1Y = 140;
+                    lightpoint2X = 360;
+                    lightpoint2Y = 160;
 
                     lightXpoints[0] = 350;
                     lightXpoints[1] = lightpoint1X;
