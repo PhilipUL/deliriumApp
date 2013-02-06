@@ -20,4 +20,6 @@
     <string name="rotateSpeed">rotateSpeed</string>
     <string name="flashSize">flashSize</string>
     <string name="headonSpeed">headonSpeed</string>
+    <string name="target">target</string>
+    <string name="distractor">distractor</string>
 </resources>

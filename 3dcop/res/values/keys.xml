@@ -8,4 +8,5 @@
      <string name= "TargetSpeed">root/TargetSpeed</string>
      <string name= "DistractionTargetSpeed">root/DistractionTargetSpeed</string>
      <string name= "BallRadio">root/BallRadio</string>
+     <string name= "ballColours">root/ballColours</string>
 </resources>

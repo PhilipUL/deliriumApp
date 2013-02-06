@@ -57,6 +57,8 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
     private int distractorBallsMax;
     private int distractorBallsMin;
     private int distractorBallSpeed;
+    private String targetColour;
+    private String distractorColour;
 
     protected BallViewViewModle(Context c, View view){
         super(c);
@@ -78,6 +80,8 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
          //String answer = Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this);
          distractorBalls = Boolean.valueOf(Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this));
          randomise = Boolean.valueOf(Shared.getOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), this));
+         targetColour = Shared.getOptionAtribute(getString(R.string.ballColours), getString(R.string.target), this);
+         distractorColour = Shared.getOptionAtribute(getString(R.string.ballColours), getString(R.string.distractor), this);
          //distractorBallsMax =  Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), this));
 //         distractorBallsMax =  Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), this));
 //         distractorBallSpeed = Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this));
@@ -211,7 +215,7 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
 
 
                     // 50 should be the height devided by constant,
-                  target = new Ball(new Point(bounds.width()/2,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor("#ff00ff"),45,bounds);
+                  target = new Ball(new Point(bounds.width()/2,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +targetColour,context).getTextContent()),45,bounds);
                   target.setInitialVelosity(new Point(0, 21));
 
                   balls.add(target);
@@ -235,10 +239,11 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
                       }
 
 
-                      IBall ball1 = new Ball(new Point(bounds.width()/4,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor("#00ff00"),45,bounds);
+
+                      IBall ball1 = new Ball(new Point(bounds.width()/4,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +distractorColour,context).getTextContent()),45,bounds);
                       ball1.setInitialVelosity(new Point(0, velocity1));
 
-                      IBall ball2 = new Ball(new Point(3 * bounds.width() / 4, 10 + (2 + random.nextInt(10)) * (1 + random.nextInt(10))), Color.parseColor("#00ff00"), 45, bounds);
+                      IBall ball2 = new Ball(new Point(3 * bounds.width() / 4, 10 + (2 + random.nextInt(10)) * (1 + random.nextInt(10))), Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +distractorColour,context).getTextContent()), 45, bounds);
                       ball2.setInitialVelosity(new Point(0, velocity1));
 
                       balls.add(ball1);

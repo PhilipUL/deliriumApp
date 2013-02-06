@@ -199,12 +199,23 @@ public class Options extends ActivityBase
         List<String> temp = modle.getColours();
         String colour = getString(R.string.Colours);
         bindSpinner(spinner, temp, getString(R.string.text),colour ,modle.TextColourListener, this);
+
         spinner = (Spinner) findViewById(R.id.backgroundColourChoser);
         bindSpinner(spinner, temp, getString(R.string.bg), colour,modle.backgroundColourListener, this);
+
         spinner = (Spinner) findViewById(R.id.AcentColourChoser);
         bindSpinner(spinner, temp, getString(R.string.acent), colour,modle.acentColourListener, this);
-        spinner = (Spinner) findViewById(R.id.fontChoser);
 
+
+        Spinner targetSpinner = (Spinner) findViewById(R.id.TargetBallColourChoser);
+        bindSpinner(targetSpinner, temp, getString(R.string.target), getString(R.string.ballColours),modle.targetColourListener, this);
+
+        Spinner distractorSpinner = (Spinner) findViewById(R.id.DistractionBallColourChoser);
+        bindSpinner(distractorSpinner, temp, getString(R.string.distractor), getString(R.string.ballColours),modle.distractorColourListener, this);
+//        bindSpinner(spinner, temp, getString(R.string.target), getString(R.string.ballColours),modle.targetColourListener, this);
+//        spinner = (Spinner) findViewById(R.id.TargetBallColourChoser);
+
+        spinner = (Spinner) findViewById(R.id.fontChoser);
         List<String> temp2 = new ArrayList<String>();
         temp2.add("0");
         temp2.add("1");

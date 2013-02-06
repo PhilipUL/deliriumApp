@@ -241,6 +241,29 @@ public class OptionsViewModle extends ViewModleBase {
 
         }
     };
+
+    public AdapterView.OnItemSelectedListener targetColourListener= new AdapterView.OnItemSelectedListener(){
+        public void onItemSelected(AdapterView<?> parent,View view, int pos, long id) {
+            Shared.setOptionAtribute(getString(R.string.ballColours),getString(R.string.target),(String)parent.getItemAtPosition(pos),getApplicationContext());
+            Options.getCurrentInstance().initAll(true);
+        }
+
+        public void onNothingSelected(AdapterView parent) {
+
+        }
+    };
+
+    public AdapterView.OnItemSelectedListener distractorColourListener= new AdapterView.OnItemSelectedListener(){
+        public void onItemSelected(AdapterView<?> parent,View view, int pos, long id) {
+            Shared.setOptionAtribute(getString(R.string.ballColours),getString(R.string.distractor),(String)parent.getItemAtPosition(pos),getApplicationContext());
+            Options.getCurrentInstance().initAll(true);
+        }
+
+        public void onNothingSelected(AdapterView parent) {
+
+        }
+    };
+
      public AdapterView.OnItemSelectedListener fontListener = new AdapterView.OnItemSelectedListener(){
         public void onItemSelected(AdapterView<?> parent,View view, int pos, long id) {
             Shared.setOptionAtribute(getString(R.string.Font),getString(R.string.current),(String)parent.getItemAtPosition(pos),getApplicationContext());

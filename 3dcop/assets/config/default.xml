@@ -45,6 +45,7 @@
     <balltest ballcount="0" />
     <lighthouseflash flashcount="0" sequence="" rotate="true" headonSpeed="1" rotateSpeed="1" flashSize="1"/>
     <distract_Balls distract="false" />
+    <ballColours target="red" distractor="blue"/>
     <TargetSpeed TargetMaxSpeed="0" TargetMinSpeed="0" TargetSpeedBall="0"/>
     <DistractionTargetSpeed MaxSpeed="0" MinSpeed="0" Speed="0"/>
     <BallRadio checked="true"/>
