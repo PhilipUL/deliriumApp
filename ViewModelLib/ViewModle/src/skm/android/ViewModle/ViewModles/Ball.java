@@ -137,7 +137,12 @@ public class Ball implements IBall{
             // slow the ball down as long as it's speed is greater than 1
             if(velosity.y < 1)
             {
-                velosity.y+= fraction;
+                if(fraction > 0)
+                {
+                    velosity.y+= fraction;
+                } else{
+                    velosity.y+=1;
+                }
             }
             if(velosity.y == minSpeed)
             {
@@ -148,7 +153,7 @@ public class Ball implements IBall{
         }
         // speed the ball up because it is falling
         //if(velosity.y > 0 && center.y > bounds.height()*1/3)
-        if(velosity.y > 0)
+        if(velosity.y >= 0)
         {
             if(velosity.y < initialVelosity.y)
             {

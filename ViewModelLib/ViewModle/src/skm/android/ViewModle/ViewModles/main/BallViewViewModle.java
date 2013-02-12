@@ -60,6 +60,14 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
     private String targetColour;
     private String distractorColour;
 
+    private int targetMaxSpeed;
+    private int targetMinSpeed;
+    private float targetBallSpeed;
+    private int distractionMaxSpeed;
+    private int distractionMinSpeed;
+    private float distractionBallSpeed;
+
+
     protected BallViewViewModle(Context c, View view){
         super(c);
         this.view=view;
@@ -82,6 +90,10 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
          randomise = Boolean.valueOf(Shared.getOptionAtribute(getString(R.string.BallRadio), getString(R.string.checked), this));
          targetColour = Shared.getOptionAtribute(getString(R.string.ballColours), getString(R.string.target), this);
          distractorColour = Shared.getOptionAtribute(getString(R.string.ballColours), getString(R.string.distractor), this);
+
+         targetBallSpeed = Float.parseFloat(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetSpeedBall), this))/10000;
+         distractionBallSpeed = Float.parseFloat(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this))/10000;
+
          //distractorBallsMax =  Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), this));
 //         distractorBallsMax =  Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), this));
 //         distractorBallSpeed = Integer.getInteger(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this));
@@ -215,36 +227,60 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
 
 
                     // 50 should be the height devided by constant,
-                  target = new Ball(new Point(bounds.width()/2,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +targetColour,context).getTextContent()),45,bounds);
-                  target.setInitialVelosity(new Point(0, 21));
+                  if(randomise == true)
+                  {
+                    target = new Ball(new Point(bounds.width()/2,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +targetColour,context).getTextContent()),45,bounds);
+                    target.setInitialVelosity(new Point(0, 21));
+                  } else {
+                      target = new Ball(new Point(bounds.width()/2,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +targetColour,context).getTextContent()),45,bounds);
+                      float temp = 50*targetBallSpeed;
+                      target.setInitialVelosity(new Point(0, (int) temp));
+                  }
 
                   balls.add(target);
                   if(distractorBalls == true)
                   {
                       int velocity1 = 0;
                       int velocity2 = 0;
-                      if(random.nextInt(2) == 0)// 50 50 chance
+                      if(randomise == true)
                       {
-                          velocity1 = (target.getVelosity().y + 20) + random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units faster, then randomly in a range from 0-5
-                      }else{
-                          velocity1 = (target.getVelosity().y - 20) - random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units slower, then randomly in a range from 0-5
+                          if(random.nextInt(2) == 0)// 50 50 chance
+                          {
+                              velocity1 = (target.getVelosity().y + 10) + random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units faster, then randomly in a range from 0-5
+                          }else{
+                              velocity1 = (target.getVelosity().y - 10) - random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units slower, then randomly in a range from 0-5
+                              if(velocity1 <= 0)
+                              {
+                                  velocity1 = target.getVelosity().y/2;
+                              }
+                          }
+                      } else {
+
+                          velocity1 = (int) (60*distractionBallSpeed);
                       }
 
-
-                      if(random.nextInt(2) == 0)// 50 50 chance
+                      if(randomise == true)
                       {
-                          velocity2 = (target.getVelosity().y + 20) + random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units faster, then randomly in a range from 0-5
-                      }else{
-                          velocity2 = (target.getVelosity().y - 20) - random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units slower, then randomly in a range from 0-5
+                          if(random.nextInt(2) == 0)// 50 50 chance
+                          {
+                              velocity2 = (target.getVelosity().y + 10) + random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units faster, then randomly in a range from 0-5
+                          }else{
+                              velocity2 = (target.getVelosity().y - 10) - random.nextInt(10); // the distractor velocity for ball 1, must be at least 5 units slower, then randomly in a range from 0-5
+                              if(velocity2 <= 0)
+                              {
+                                  velocity2 = target.getVelosity().y/2;
+                              }
+                          }
+                      } else {
+                          velocity2 = (int) (60*distractionBallSpeed);
                       }
-
 
 
                       IBall ball1 = new Ball(new Point(bounds.width()/4,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +distractorColour,context).getTextContent()),45,bounds);
                       ball1.setInitialVelosity(new Point(0, velocity1));
 
                       IBall ball2 = new Ball(new Point(3 * bounds.width() / 4, 10 + (2 + random.nextInt(10)) * (1 + random.nextInt(10))), Color.parseColor(Shared.getOption(context.getString(R.string.Colours) + "/" +distractorColour,context).getTextContent()), 45, bounds);
-                      ball2.setInitialVelosity(new Point(0, velocity1));
+                      ball2.setInitialVelosity(new Point(0, velocity2));
 
                       balls.add(ball1);
                       balls.add(ball2);
@@ -282,7 +318,8 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
 
                  if(bounceCount == specifiedNoBounceCount)
                  {
-                     if(Math.abs(target.getVelosity().y) < 4)
+                     //if(Math.abs(target.getVelosity().y) < 4)
+                     if(target.getCenter().y < bounds.height()/4)
                      {
                         return true;
                      }

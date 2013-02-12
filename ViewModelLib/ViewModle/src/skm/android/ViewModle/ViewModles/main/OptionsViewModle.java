@@ -58,7 +58,7 @@ public class OptionsViewModle extends ViewModleBase {
 
     public FloatObservable SeekBarFlashRotateSpeedNumber = new FloatObservable(0f);
     public FloatObservable SeekBarFlashSpeed = new FloatObservable(0f);
-    public FloatObservable SeekBarFlashSizeProgress = new FloatObservable(0f);
+    //public FloatObservable SeekBarFlashSizeProgress = new FloatObservable(0f);
     public StringObservable lightHouseSequence = new StringObservable("");
 
 

@@ -130,11 +130,11 @@ public class Options extends ActivityBase
         final CheckBox checkBox = (CheckBox)findViewById(R.id.checkbox_DistractBalls);
         checkBox.setChecked(Boolean.parseBoolean(Shared.getOptionAtribute(getString(R.string.distractBalls), getString(R.string.distract), this)));
 
-        SeekBar distractionBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
-        SeekBar distractionBarMinSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
-        SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
-        distractionBarMaxSpeed.setEnabled(false);
-        distractionBarMinSpeed.setEnabled(false);
+//        SeekBar distractionBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
+//        SeekBar distractionBarMinSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMinSpeed);
+        SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
+//        distractionBarMaxSpeed.setEnabled(false);
+//        distractionBarMinSpeed.setEnabled(false);
         distractionBarSpeed.setEnabled(false);
 
         checkDistractionSliderState();
@@ -144,30 +144,30 @@ public class Options extends ActivityBase
     public void checkDistractionSliderState()
     {
 
-        SeekBar distractionBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
-        SeekBar distractionBarMinSpeed = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
+//        SeekBar distractionBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
+//        SeekBar distractionBarMinSpeed = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
         SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
-        SeekBar TargetBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarTargetMaxSpeed);
-        SeekBar TargetBarMinSpeed = (SeekBar) findViewById(R.id.seekTargetMinSpeed);
+//        SeekBar TargetBarMaxSpeed = (SeekBar) findViewById(R.id.seekbarTargetMaxSpeed);
+//        SeekBar TargetBarMinSpeed = (SeekBar) findViewById(R.id.seekTargetMinSpeed);
         SeekBar barSpeed = (SeekBar) findViewById(R.id.seekbarTargetBallSpeed);
 
         if(((RadioButton) findViewById(R.id.radioRandomize)).isChecked() && ((CheckBox)findViewById(R.id.checkbox_DistractBalls)).isChecked())  // if random and distract balls are set to true
         {
-            distractionBarMaxSpeed.setEnabled(true);
-            distractionBarMinSpeed.setEnabled(true);
-            TargetBarMaxSpeed.setEnabled(true);
-            TargetBarMinSpeed.setEnabled(true);
+//            distractionBarMaxSpeed.setEnabled(true);
+//            distractionBarMinSpeed.setEnabled(true);
+//            TargetBarMaxSpeed.setEnabled(true);
+//            TargetBarMinSpeed.setEnabled(true);
 
             distractionBarSpeed.setEnabled(false);
             barSpeed.setEnabled(false);
         }else if(((RadioButton) findViewById(R.id.radioRandomize)).isChecked() == false)
         {
             barSpeed.setEnabled(true);
-            TargetBarMaxSpeed.setEnabled(false);
-            TargetBarMinSpeed.setEnabled(false);
-
-            distractionBarMaxSpeed.setEnabled(false);
-            distractionBarMinSpeed.setEnabled(false);
+//            TargetBarMaxSpeed.setEnabled(false);
+//            TargetBarMinSpeed.setEnabled(false);
+//
+//            distractionBarMaxSpeed.setEnabled(false);
+//            distractionBarMinSpeed.setEnabled(false);
 
             if(((CheckBox)findViewById(R.id.checkbox_DistractBalls)).isChecked())
             {
@@ -178,17 +178,17 @@ public class Options extends ActivityBase
         } else if(((RadioButton) findViewById(R.id.radioRandomize)).isChecked() == true)
         {
             barSpeed.setEnabled(false);
-            TargetBarMaxSpeed.setEnabled(true);
-            TargetBarMinSpeed.setEnabled(true);
+//            TargetBarMaxSpeed.setEnabled(true);
+//            TargetBarMinSpeed.setEnabled(true);
 
             distractionBarSpeed.setEnabled(false);
             if(((CheckBox)findViewById(R.id.checkbox_DistractBalls)).isChecked())
             {
-                distractionBarMaxSpeed.setEnabled(true);
-                distractionBarMinSpeed.setEnabled(true);
+//                distractionBarMaxSpeed.setEnabled(true);
+//                distractionBarMinSpeed.setEnabled(true);
             } else {
-                distractionBarMaxSpeed.setEnabled(false);
-                distractionBarMinSpeed.setEnabled(false);
+//                distractionBarMaxSpeed.setEnabled(false);
+//                distractionBarMinSpeed.setEnabled(false);
             }
         }
         //BallViewViewModle.getInstance(getApplicationContext(), null).setPreviewMode();
@@ -277,11 +277,11 @@ public class Options extends ActivityBase
 
     public void initSliders()
     {
-        SeekBar bar = (SeekBar) findViewById(R.id.seekbarTargetMaxSpeed);
-        bar.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), this))); // get the string back from the xml file, and convert it to an int
-
-        SeekBar barTarMin = (SeekBar) findViewById(R.id.seekTargetMinSpeed);
-        barTarMin.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMinSpeed), this)));
+//        SeekBar bar = (SeekBar) findViewById(R.id.seekbarTargetMaxSpeed);
+//        bar.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMaxSpeed), this))); // get the string back from the xml file, and convert it to an int
+//
+//        SeekBar barTarMin = (SeekBar) findViewById(R.id.seekTargetMinSpeed);
+//        barTarMin.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetMinSpeed), this)));
 
         SeekBar barTarSpeed = (SeekBar) findViewById(R.id.seekbarTargetBallSpeed);
         barTarSpeed.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.TargetSpeed), getString(R.string.TargetSpeedBall), this)));
@@ -289,11 +289,11 @@ public class Options extends ActivityBase
 
 
 
-        SeekBar distractionBarMax = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
-        distractionBarMax.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), this))); // get the string back from the xml file, and convert it to an int
-
-        SeekBar distractionBarMin = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
-        distractionBarMin.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), this)));
+//        SeekBar distractionBarMax = (SeekBar) findViewById(R.id.seekbarDistractionMaxSpeed);
+//        distractionBarMax.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MaxSpeed), this))); // get the string back from the xml file, and convert it to an int
+//
+//        SeekBar distractionBarMin = (SeekBar) findViewById(R.id.seekDistractionMinSpeed);
+//        distractionBarMin.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.MinSpeed), this)));
 
         SeekBar distractionBarSpeed = (SeekBar) findViewById(R.id.seekbarDistractionBallSpeed);
         distractionBarSpeed.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.DistractionTargetSpeed), getString(R.string.Speed), this)));
@@ -303,8 +303,8 @@ public class Options extends ActivityBase
         SeekBar lighthouseFlashRotateSpeedSlider = (SeekBar) findViewById(R.id.seekbarFlashRotateSpeed);
         lighthouseFlashRotateSpeedSlider.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.rotateSpeed), this))); // get the string back from the xml file, and convert it to an int
 
-        SeekBar lighthouseFlashSizeSlider= (SeekBar) findViewById(R.id.seekbarFlashSize);
-        lighthouseFlashSizeSlider.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashSize), this)));
+//        SeekBar lighthouseFlashSizeSlider= (SeekBar) findViewById(R.id.seekbarFlashSize);
+//        lighthouseFlashSizeSlider.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashSize), this)));
 
         SeekBar lighthouseFlashSpeedHeadon = (SeekBar) findViewById(R.id.seekbarFlashSpeed);
         lighthouseFlashSpeedHeadon.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.headonSpeed), this)));
