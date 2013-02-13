@@ -195,71 +195,71 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_margin="5dp">
-            <!--<LinearLayout-->
-                    <!--android:layout_weight = "1"-->
-                    <!--android:layout_width="fill_parent"-->
-                    <!--android:layout_height="200dp"-->
-                    <!--android:minHeight="50dp"-->
-                    <!--android:maxHeight="200dp"-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:gravity="left"-->
-                    <!--android:layout_margin="5dp"-->
-                    <!--android:visibility="visible">-->
-                <!--<LinearLayout-->
-                              <!--android:layout_width="fill_parent"-->
-                              <!--android:layout_height="75dp"-->
-                              <!--android:minHeight="50dp"-->
-                              <!--android:maxHeight="100dp"-->
-                              <!--android:orientation="horizontal"-->
-                              <!--android:gravity="center"-->
-                              <!--android:layout_margin="5dp">-->
+            <LinearLayout
+                    android:layout_weight = "1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:minHeight="50dp"
+                    android:maxHeight="200dp"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:visibility="visible">
+                <LinearLayout
+                              android:layout_width="fill_parent"
+                              android:layout_height="75dp"
+                              android:minHeight="50dp"
+                              android:maxHeight="100dp"
+                              android:orientation="horizontal"
+                              android:gravity="center"
+                              android:layout_margin="5dp">
 
-                    <!--<TextView android:layout_height="fill_parent"-->
-                              <!--android:layout_width="100dp"-->
-                              <!--android:gravity="center"-->
-                              <!--android:layout_margin="5dp"-->
-                              <!--android:layout_weight=".5"-->
-                              <!--binding:text="CONCAT(@string/TargetBallMaxSpeed,' ',seekBar1)"-->
-                              <!--android:id="@id/FontTextTargetMaxSpeed"/>-->
+                    <TextView android:layout_height="fill_parent"
+                              android:layout_width="100dp"
+                              android:gravity="center"
+                              android:layout_margin="5dp"
+                              android:layout_weight=".5"
+                              binding:text="CONCAT(@string/TargetBallMaxSpeed,' ',seekBar1)"
+                              android:id="@id/FontTextTargetMaxSpeed"/>
 
-                    <!--<SeekBar-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_margin="5dp"-->
-                            <!--android:layout_weight=".5"-->
-                            <!--android:id="@id/seekbarTargetMaxSpeed"-->
-                            <!--android:max="20"-->
-                            <!--binding:progress="seekBar1"-->
-                            <!--binding:onSeekBarChange="SliderMovedMaxSpeed"/>-->
-                <!--</LinearLayout>-->
-                <!--<LinearLayout-->
-                        <!--android:layout_width="fill_parent"-->
-                        <!--android:layout_height="75dp"-->
-                        <!--android:minHeight="50dp"-->
-                        <!--android:maxHeight="100dp"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:gravity="center"-->
-                        <!--android:layout_margin="5dp">-->
+                    <SeekBar
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+                            android:id="@id/seekbarTargetMaxSpeed"
+                            android:max="10"
+                            binding:progress="seekBar1"
+                            binding:onSeekBarChange="SliderMovedMaxSpeed"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="75dp"
+                        android:minHeight="50dp"
+                        android:maxHeight="100dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_margin="5dp">
 
-                    <!--<TextView android:layout_height="fill_parent"-->
-                              <!--android:layout_width="100dp"-->
-                              <!--android:gravity="center"-->
-                              <!--android:layout_margin="5dp"-->
-                              <!--android:layout_weight=".5"-->
-                              <!--binding:text="CONCAT(@string/TargetBallMinSpeed, ' ', seekBar2)"-->
-                              <!--android:id="@id/FontSeekTargetMinSpeed"/>-->
+                    <TextView android:layout_height="fill_parent"
+                              android:layout_width="100dp"
+                              android:gravity="center"
+                              android:layout_margin="5dp"
+                              android:layout_weight=".5"
+                              binding:text="CONCAT(@string/TargetBallMinSpeed, ' ', seekBar2)"
+                              android:id="@id/FontSeekTargetMinSpeed"/>
 
-                    <!--<SeekBar-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_margin="5dp"-->
-                            <!--android:layout_weight=".5"-->
-                            <!--android:id="@id/seekTargetMinSpeed"-->
-                            <!--android:max="20"-->
-                            <!--binding:progress="seekBar2"-->
-                            <!--binding:onSeekBarChange="SliderMovedMinSpeed"/>-->
-                <!--</LinearLayout>-->
-            <!--</LinearLayout>-->
+                    <SeekBar
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+                            android:id="@id/seekTargetMinSpeed"
+                            android:max="10"
+                            binding:progress="seekBar2"
+                            binding:onSeekBarChange="SliderMovedMinSpeed"/>
+                </LinearLayout>
+            </LinearLayout>
             <LinearLayout
                     android:layout_weight = "1"
                     android:layout_width="fill_parent"
@@ -292,7 +292,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight=".5"
                             android:id="@id/seekbarTargetBallSpeed"
-                            android:max="20"
+                            android:max="10"
                             binding:progress="SeekBarTargetSpeed"
                             binding:onSeekBarChange="SliderMovedTargetBallSpeed"/>
                 </LinearLayout>
@@ -307,71 +307,71 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_margin="5dp">
-            <!--<LinearLayout-->
-                    <!--android:layout_weight = "1"-->
-                    <!--android:layout_width="fill_parent"-->
-                    <!--android:layout_height="200dp"-->
-                    <!--android:minHeight="50dp"-->
-                    <!--android:maxHeight="200dp"-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:gravity="left"-->
-                    <!--android:layout_margin="5dp"-->
-                    <!--android:visibility="visible">-->
-                <!--<LinearLayout-->
-                        <!--android:layout_width="fill_parent"-->
-                        <!--android:layout_height="75dp"-->
-                        <!--android:minHeight="50dp"-->
-                        <!--android:maxHeight="100dp"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:gravity="center"-->
-                        <!--android:layout_margin="5dp">-->
+            <LinearLayout
+                    android:layout_weight = "1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:minHeight="50dp"
+                    android:maxHeight="200dp"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:visibility="visible">
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="75dp"
+                        android:minHeight="50dp"
+                        android:maxHeight="100dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_margin="5dp">
 
-                    <!--<TextView android:layout_height="fill_parent"-->
-                              <!--android:layout_width="100dp"-->
-                              <!--android:gravity="center"-->
-                              <!--android:layout_margin="5dp"-->
-                              <!--android:layout_weight=".5"-->
-                              <!--binding:text="CONCAT(@string/DistractionBallMaxSpeed,' ',SeekBarMaxDistractionSpeed)"-->
-                              <!--android:id="@id/FontTextDistractionMaxSpeed"/>-->
+                    <TextView android:layout_height="fill_parent"
+                              android:layout_width="100dp"
+                              android:gravity="center"
+                              android:layout_margin="5dp"
+                              android:layout_weight=".5"
+                              binding:text="CONCAT(@string/DistractionBallMaxSpeed,' ',SeekBarMaxDistractionSpeed)"
+                              android:id="@id/FontTextDistractionMaxSpeed"/>
 
-                    <!--<SeekBar-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_margin="5dp"-->
-                            <!--android:layout_weight=".5"-->
-                            <!--android:id="@id/seekbarDistractionMaxSpeed"-->
-                            <!--android:max="20"-->
-                            <!--binding:progress="SeekBarMaxDistractionSpeed"-->
-                            <!--binding:onSeekBarChange="SliderMovedDistractMaxSpeed"/>-->
-                <!--</LinearLayout>-->
-                <!--<LinearLayout-->
-                        <!--android:layout_width="fill_parent"-->
-                        <!--android:layout_height="75dp"-->
-                        <!--android:minHeight="50dp"-->
-                        <!--android:maxHeight="100dp"-->
-                        <!--android:orientation="horizontal"-->
-                        <!--android:gravity="center"-->
-                        <!--android:layout_margin="5dp">-->
+                    <SeekBar
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+                            android:id="@id/seekbarDistractionMaxSpeed"
+                            android:max="10"
+                            binding:progress="SeekBarMaxDistractionSpeed"
+                            binding:onSeekBarChange="SliderMovedDistractMaxSpeed"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="75dp"
+                        android:minHeight="50dp"
+                        android:maxHeight="100dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_margin="5dp">
 
-                    <!--<TextView android:layout_height="fill_parent"-->
-                              <!--android:layout_width="100dp"-->
-                              <!--android:gravity="center"-->
-                              <!--android:layout_margin="5dp"-->
-                              <!--android:layout_weight=".5"-->
-                              <!--binding:text="CONCAT(@string/DistractionBallMinSpeed, ' ', SeekBarMinDistractionSpeed)"-->
-                              <!--android:id="@id/FontSeekDistractionMinSpeed"/>-->
+                    <TextView android:layout_height="fill_parent"
+                              android:layout_width="100dp"
+                              android:gravity="center"
+                              android:layout_margin="5dp"
+                              android:layout_weight=".5"
+                              binding:text="CONCAT(@string/DistractionBallMinSpeed, ' ', SeekBarMinDistractionSpeed)"
+                              android:id="@id/FontSeekDistractionMinSpeed"/>
 
-                    <!--<SeekBar-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_margin="5dp"-->
-                            <!--android:layout_weight=".5"-->
-                            <!--android:id="@id/seekDistractionMinSpeed"-->
-                            <!--android:max="20"-->
-                            <!--binding:progress="SeekBarMinDistractionSpeed"-->
-                            <!--binding:onSeekBarChange="SliderMovedDistractMinSpeed"/>-->
-                <!--</LinearLayout>-->
-            <!--</LinearLayout>-->
+                    <SeekBar
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+                            android:id="@id/seekDistractionMinSpeed"
+                            android:max="10"
+                            binding:progress="SeekBarMinDistractionSpeed"
+                            binding:onSeekBarChange="SliderMovedDistractMinSpeed"/>
+                </LinearLayout>
+            </LinearLayout>
             <LinearLayout
                     android:layout_weight = "1"
                     android:layout_width="fill_parent"
@@ -403,10 +403,47 @@
                             android:layout_margin="5dp"
                             android:layout_weight=".5"
                             android:id="@id/seekbarDistractionBallSpeed"
-                            android:max="20"
+                            android:max="10"
                             binding:progress="SeekBarDistractionSpeed"
                             binding:onSeekBarChange="SliderMovedDistractBallSpeed"/>
                 </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_weight = "1"
+                android:layout_width="fill_parent"
+                android:layout_height="75dp"
+                android:minHeight="50dp"
+                android:maxHeight="100dp"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:visibility="visible">
+            <LinearLayout android:layout_width="fill_parent"
+                          android:layout_height="75dp"
+                          android:minHeight="50dp"
+                          android:maxHeight="100dp"
+                          android:orientation="horizontal"
+                          android:gravity="center"
+                          android:layout_margin="5dp">
+
+                <TextView android:layout_height="fill_parent"
+                          android:layout_width="100dp"
+                          android:gravity="center"
+                          android:layout_margin="5dp"
+                          android:layout_weight=".5"
+                          binding:text="CONCAT(@string/DistractionBallSpeed, ' ', SeekBarDistractionSpeed)"
+                          android:id="@id/FontTextTargetBallSpeed"/>
+
+                <SeekBar
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight=".5"
+                        android:id="@id/seekbarDistractionBallSpeed"
+                        android:max="10"
+                        binding:progress="SeekBarDistractionSpeed"
+                        binding:onSeekBarChange="SliderMovedDistractBallSpeed"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -557,7 +594,7 @@
                                      <!--android:layout_margin="5dp"-->
                                      <!--android:layout_weight=".5"-->
                                      <!--android:id="@id/seekbarFlashSize"-->
-                                     <!--android:max="20"-->
+                                     <!--android:max="10"-->
                                      <!--android:progress="0"-->
                                      <!--binding:onSeekBarChange="SliderMovedFlashSize"-->
                                      <!--binding:progress="SeekBarFlashSizeProgress"/>-->
@@ -585,7 +622,7 @@
                                     android:layout_margin="5dp"
                                     android:layout_weight=".5"
                                     android:id="@id/seekbarFlashSpeed"
-                                    android:max="20"
+                                    android:max="5"
                                     android:progress="0"
                                     binding:progress="SeekBarFlashSpeed"
                                     binding:onSeekBarChange="SliderMovedFlashSpeed"/>
@@ -625,7 +662,7 @@
                                 android:layout_margin="5dp"
                                 android:layout_weight=".5"
                                 android:id="@id/seekbarFlashRotateSpeed"
-                                android:max="20"
+                                android:max="5"
                                 android:progress="0"
                                 binding:progress="SeekBarFlashRotateSpeedNumber"
                                 binding:onSeekBarChange="SliderMovedRotateSpeed"/>
