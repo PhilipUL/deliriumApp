@@ -92,10 +92,20 @@ public class rectangle {
 
             RectF colourRec = new RectF(ballBounds.left+2, ballBounds.top+2, ballBounds.right-2, ballBounds.bottom-2);
 
+//            colour.getTextSize();
+            colour.setTextSize(30);
+            float[] widths = new float[month.length()];
+            colour.getTextWidths(month, widths);
+            float offsetWidth =0;
+            for(int i = 0; i < widths.length/2; i++)
+            {
+                offsetWidth += widths[i];
+            }
 
             c.drawRect(colourRec, this.paint);
 //            c.drawRect(this.ballBounds, this.paint);
-            c.drawText(getMonth(), ballBounds.left+(ballBounds.width()/2), ballBounds.top+(ballBounds.height()/2), colour);
+            c.drawText(getMonth(), ballBounds.left+(ballBounds.width()/2)-offsetWidth, ballBounds.top+(ballBounds.height()/2), colour);
+
         }
 
         public boolean isPressed() {

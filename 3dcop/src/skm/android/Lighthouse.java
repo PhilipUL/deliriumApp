@@ -66,6 +66,7 @@ public class Lighthouse extends ActivityBase {
         Vector<View> elements = new Vector<View>();
         elements.add(findViewById(R.id.submitButton));
         elements.add(findViewById(R.id.flashCount));
+
         initText(elements);
     }
 }

@@ -82,7 +82,7 @@ public class ReverseMonthViewModle extends YesNoViewModleBase {
         double totalTime = (endTime - startTime)/1000;
 
 
-        Reverse_Month.getCurrentInstance().finish();
+        //Reverse_Month.getCurrentInstance().finish();
         if(toast!=null)toast.show();
         Activity caller = this.mainMenuLaunched ? MainMenu.getCurrentInstance():  Menu.getCurrentInstance();
         Intent intent =new Intent(caller, this.mainMenuLaunched ?Result.class:Result.class);
@@ -91,7 +91,16 @@ public class ReverseMonthViewModle extends YesNoViewModleBase {
         String[] list= new String[10];
 //        list[0]=getString(R.string.Count) + BallViewViewModle.getInstance(getApplicationContext(),null).getBounceCount()
 //                +"\n"+ getString(R.string.SelectedValue) + selected;
-        list[0]=getString(R.string.Count) + "hello there " + selected;
+
+
+        String outputString = "";
+
+        for(int i = 0; i < userString.size(); i++)
+        {
+            outputString += userString.get(i)+"\n";
+        }
+        list[0]="Total Time taken = " + totalTime + " seconds\n\n"+ outputString;
+
         intent.putExtra(Shared.RESULT_MESSAGES, list);
         caller.startActivity(intent);
     }
