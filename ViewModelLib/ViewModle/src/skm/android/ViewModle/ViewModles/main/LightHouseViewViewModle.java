@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 import java.util.Vector;
-import java.lang.String;
 
 /**
  * Created by IntelliJ IDEA.
@@ -72,7 +71,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
 
 
      public void  init() {
-
+         flashcount = 0;
          noFlashesSpecified = Integer.parseInt(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.flashcount), this));
          String sequence = Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.sequence), this);
          sequence = sequence.trim();
