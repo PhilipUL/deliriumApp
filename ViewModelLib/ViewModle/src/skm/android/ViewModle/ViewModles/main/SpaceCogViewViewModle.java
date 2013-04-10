@@ -162,7 +162,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
         addClip(clips,new Test(),1);
 
         //addClip(clips,end,1);
-        // come up with a random sequence of balls
+        // come up with a random sequence of months
     }
 
     private void addClip(List<IClip> clips,IClip clip,int times){
@@ -234,7 +234,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 
             if(!started){
                 balls=new Vector<IBall>();
-                //balls.add(new Ball(new Point(bounds.width()/4,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor("#00ff00"),45,bounds));
+                //months.add(new Ball(new Point(bounds.width()/4,10+(2+random.nextInt(10))*(1+random.nextInt(10))),Color.parseColor("#00ff00"),45,bounds));
                 balls.add(new Ball(new Point(bounds.width()/4, bounds.height()/2), Color.parseColor("#00ff00"), 45, bounds));
                 balls.add(new Ball(new Point((bounds.width()/4)*2, bounds.height()/2), Color.parseColor("#00ff00"), 45, bounds));
                 balls.add(new Ball(new Point((bounds.width()/4)*3, bounds.height()/2), Color.parseColor("#00ff00"), 45, bounds));
@@ -274,7 +274,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 
     private class Demo implements IClip
     {
-        // need to create a process which increments the number of highlighted balls
+        // need to create a process which increments the number of highlighted months
         // which will require a class variable in SpaceCogViewViewModle
         Vector<IBall> balls = getBallVector();
         List<IBall> sequence = new ArrayList<IBall>();
@@ -298,11 +298,11 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
             windowBounds = out.getClipBounds();
 
 
-            // here we need to create a random list of references to the balls to be compared to the list created by the user
+            // here we need to create a random list of references to the months to be compared to the list created by the user
             if(!started)
             {
                 sequenceNumber = getSequenceNumber();
-                // create a list of random balls from the balls Vector. SequenceNumber dictates how many random balls will be stored in the sequence variable
+                // create a list of random months from the months Vector. SequenceNumber dictates how many random months will be stored in the sequence variable
                 for(int i = 0; i< sequenceNumber; i++)
                 {
                     int randomInt = random.nextInt(balls.size());
@@ -332,7 +332,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
                 count++;
             }
 
-            // draw all the balls
+            // draw all the months
             for(IBall ball: balls)
             {
                 ball.Draw(c);
@@ -364,9 +364,9 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
         }
     }
 //    private IClip demo = new IClip() {
-//        // need to create a process which increments the number of highlighted balls
+//        // need to create a process which increments the number of highlighted months
 //        // which will require a class variable in SpaceCogViewViewModle
-//        Vector<IBall> balls = getBallVector();
+//        Vector<IBall> months = getBallVector();
 //        List<IBall> sequence = new ArrayList<IBall>();
 //        boolean started =false;
 //        Random random = new Random();
@@ -377,7 +377,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //        int sequenceNumber= 4;
 //
 //        public boolean play(Canvas out,Context context) {
-//            balls = getBallVector();
+//            months = getBallVector();
 //            Paint paint = null;
 //            float aspect = out.getHeight()*1.0f/out.getWidth();
 //            int width = 1000;
@@ -387,15 +387,15 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //            windowBounds = out.getClipBounds();
 //
 //
-//            // here we need to create a random list of references to the balls to be compared to the list created by the user
+//            // here we need to create a random list of references to the months to be compared to the list created by the user
 //            if(!started)
 //            {
 //                sequenceNumber = getSequenceNumber();
-//                // create a list of random balls from the balls Vector. SequenceNumber dictates how many random balls will be stored in the sequence variable
+//                // create a list of random months from the months Vector. SequenceNumber dictates how many random months will be stored in the sequence variable
 //                for(int i = 0; i< sequenceNumber; i++)
 //                {
-//                    int randomInt = random.nextInt(balls.size());
-//                    sequence.add(balls.get(randomInt));
+//                    int randomInt = random.nextInt(months.size());
+//                    sequence.add(months.get(randomInt));
 //                }
 //
 //                // NB
@@ -421,8 +421,8 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //                count++;
 //            }
 //
-//            // draw all the balls
-//            for(IBall ball: balls)
+//            // draw all the months
+//            for(IBall ball: months)
 //            {
 //                ball.Draw(c);
 //            }
@@ -493,7 +493,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
             }
 
             for(IBall ball :balls){
-                //ball.Update();  // the balls don't need to be updated
+                //ball.Update();  // the months don't need to be updated
                 ball.Draw(c);
             }
 
@@ -527,7 +527,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
                 setResult(false);
                 return true;
             }
-            // if the sequences match and we have pressed the number of balls in the demo sequence
+            // if the sequences match and we have pressed the number of months in the demo sequence
             else if(sequencesMatch == true && ballPressCount == demoSequence.size()){
                 // then we have succeded and return true because we have finished
 
@@ -555,14 +555,14 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
                         if(ball.contains(touchCoord))
                         {
                             ball.setPressed(true);
-                            // add ball pressed to userSequenceTest, so that we can compare with demoSequence
-                            userSequenceTest.add(ball);
-
-                            ballPressCount++;
+//                            // add ball pressed to userSequenceTest, so that we can compare with demoSequence
+//                            userSequenceTest.add(ball);
+//
+//                            monthPressedCount++;
                         }
                         else // if we didn't touch the ball
                         {
-                            // then set all the balls to false
+                            // then set all the months to false
                             ball.setPressed(false);
                         }
 
@@ -570,9 +570,17 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
                     break;
 
                 case MotionEvent.ACTION_UP:
+
                     for(IBall ball: balls)
                     {
-                        ball.setPressed(false);
+                        if(ball.isPressed() == true)
+                        {
+                            // add ball pressed to userSequenceTest, so that we can compare with demoSequence
+                            userSequenceTest.add(ball);
+
+                            ballPressCount++;
+                            ball.setPressed(false);
+                        }
                     }
                     break;
             }
@@ -583,9 +591,9 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
     }
 //    private IClip test = new ITestClip()
 //    {
-//        int ballPressCount = 0;
+//        int monthPressedCount = 0;
 //        boolean started =false;
-//        Vector<IBall> balls;
+//        Vector<IBall> months;
 //        Rect bounds ;
 //        boolean sequencesMatch = true;
 //        List<IBall> userSequenceTest = new ArrayList<IBall>();
@@ -613,15 +621,15 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //
 //            if(!started){
 //                started = true;
-//                balls= getBallVector();
+//                months= getBallVector();
 //
 //                paint= new Paint();
 //                paint.setColor(Color.parseColor("#00ff00"));
 //                paint.setStrokeWidth(5);
 //            }
 //
-//            for(IBall ball :balls){
-//                //ball.Update();  // the balls don't need to be updated
+//            for(IBall ball :months){
+//                //ball.Update();  // the months don't need to be updated
 //                ball.Draw(c);
 //            }
 //
@@ -643,14 +651,14 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //            }
 //
 //            // if we've pressed more circles then are in the sequence, then we have failed.
-//            if(ballPressCount > getDemoSequence().size() || sequencesMatch == false)
+//            if(monthPressedCount > getDemoSequence().size() || sequencesMatch == false)
 //            {
 //                // return true when finished
 //                setResult(true);
 //                return true;
 //            }
-//            // if the sequences match and we have pressed the number of balls in the demo sequence
-//            else if(sequencesMatch == true && ballPressCount == demoSequence.size()){
+//            // if the sequences match and we have pressed the number of months in the demo sequence
+//            else if(sequencesMatch == true && monthPressedCount == demoSequence.size()){
 //                // then we have succeded and return true because we have finished
 //                setResult(true);
 //                return true;
@@ -669,7 +677,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //                    // figure out if a ball has been touched
 //                    Point touchCoord = new Point((int) (e.getX()*(bounds.width()*1.0/windowBounds.width())),(int) (e.getY()*(bounds.height()*1.0/windowBounds.height())));
 //
-//                    for(IBall ball :balls)
+//                    for(IBall ball :months)
 //                    {
 //                        // if the places that we touched happens to be in the area of the ball, then set ball touch to true
 //                        if(ball.contains(touchCoord))
@@ -678,11 +686,11 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //                            // add ball pressed to userSequenceTest, so that we can compare with demoSequence
 //                            userSequenceTest.add(ball);
 //
-//                            ballPressCount++;
+//                            monthPressedCount++;
 //                        }
 //                        else // if we didn't touch the ball
 //                        {
-//                            // then set all the balls to false
+//                            // then set all the months to false
 //                            ball.setPressed(false);
 //                        }
 //
@@ -690,7 +698,7 @@ public class SpaceCogViewViewModle extends ViewModleBase implements Serializable
 //                    break;
 //
 //                case MotionEvent.ACTION_UP:
-//                    for(IBall ball: balls)
+//                    for(IBall ball: months)
 //                    {
 //                        ball.setPressed(false);
 //                    }

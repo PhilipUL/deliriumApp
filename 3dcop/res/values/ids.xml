@@ -69,4 +69,6 @@
     <item name="radioLightHead" type="id"/>
     <item name="radioLightRotate" type="id"/>
     <item name="lighthouseSequenceText" type="id"/>
+    <item name="ReverseMonthButton" type="id"/>
+    <item name="lighthouseMenuButtonSequence" type="id"/>
 </resources>

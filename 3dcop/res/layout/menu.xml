@@ -11,6 +11,9 @@
                 android:text="@string/MenuLighthouseTestButtonText" binding:onClick="LaunchLightHouseTestCommand"
                 android:layout_margin="15dp"  android:id="@id/lighthouseMenuButton" />
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/MenuLighthouseTestButtonTextSequence" binding:onClick="LaunchLightHouseTestCommandSequence"
+                android:layout_margin="15dp"  android:id="@id/lighthouseMenuButtonSequence" />
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
                 android:text="@string/MenuDRSTestButtonText" binding:onClick="LaunchDRSTestCommand"
                 android:layout_margin="15dp" android:id="@id/DRSButton"/>
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
@@ -31,5 +34,8 @@
         <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
                 android:text="@string/SpaceCogTest" binding:onClick="SpaceCog"
                 android:layout_margin="15dp" android:id="@id/SpaceCogButton"/>
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="@string/ReverseMonthTest" binding:onClick="ReverseMonth"
+                android:layout_margin="15dp" android:id="@id/ReverseMonthButton"/>
     </LinearLayout>
 </ScrollView>

@@ -58,6 +58,7 @@ public class BallViewModle2D extends YesNoViewModleBase {
         }
     };
     private void advance() {
+
         Ball.getCurrentInstance().finish();
         if(toast!=null)toast.show();
         Activity caller = this.mainMenuLaunched ? MainMenu.getCurrentInstance():  Menu.getCurrentInstance();

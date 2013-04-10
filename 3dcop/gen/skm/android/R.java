@@ -12,14 +12,6 @@ public final class R {
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
-        public static final int lighthouse20frames=0x7f020001;
-        public static final int lighthouse_pannel=0x7f020002;
-        public static final int lighthouse_pannel_backup=0x7f020003;
-        public static final int lighthousespritesheet60small=0x7f020004;
-        public static final int lighthousespritesheet60v5=0x7f020005;
-        public static final int lighthousespritesheet60v6=0x7f020006;
-        public static final int lighthousespritesheet60v7=0x7f020007;
-        public static final int simple_lighthouse_pannel=0x7f020008;
     }
     public static final class id {
         public static final int AboutButton=0x7f05000c;
@@ -54,12 +46,13 @@ public final class R {
         public static final int PreviewBallTest=0x7f050041;
         public static final int Reset=0x7f05001c;
         public static final int ResetFlashSize=0x7f050029;
+        public static final int ReverseMonthButton=0x7f050046;
         public static final int SaveBallTest=0x7f050040;
         public static final int SpaceCogButton=0x7f050021;
         public static final int TargetBallColourChoser=0x7f050035;
         public static final int TargetBallColourText=0x7f050036;
         public static final int TextSize=0x7f050018;
-        public static final int TextViewTitle=0x7f050049;
+        public static final int TextViewTitle=0x7f05004b;
         public static final int TwoItemButton=0x7f050007;
         public static final int Yes=0x7f050016;
         public static final int amtsMessage=0x7f050006;
@@ -74,16 +67,17 @@ public final class R {
         public static final int fontChoser=0x7f050011;
         public static final int largeButton=0x7f050024;
         public static final int lighthouseMenuButton=0x7f050001;
+        public static final int lighthouseMenuButtonSequence=0x7f050047;
         public static final int lighthouseSequenceText=0x7f050045;
         public static final int mediumButton=0x7f050025;
         public static final int menuButton=0x7f050000;
         public static final int radioLightHead=0x7f050043;
         public static final int radioLightRotate=0x7f050044;
-        public static final int radioNonRandomize=0x7f050048;
-        public static final int radioRandomize=0x7f050047;
+        public static final int radioNonRandomize=0x7f05004a;
+        public static final int radioRandomize=0x7f050049;
         public static final int seekDistractionMinSpeed=0x7f05003e;
         public static final int seekTargetMinSpeed=0x7f050031;
-        public static final int seekbar=0x7f050046;
+        public static final int seekbar=0x7f050048;
         public static final int seekbarDistractionBallSpeed=0x7f050039;
         public static final int seekbarDistractionMaxSpeed=0x7f05003d;
         public static final int seekbarFlashRotateSpeed=0x7f050042;
@@ -104,12 +98,16 @@ public final class R {
         public static final int config_screen=0x7f030003;
         public static final int correct_incorrect=0x7f030004;
         public static final int drs=0x7f030005;
-        public static final int light_house_test=0x7f030006;
-        public static final int main_menu=0x7f030007;
-        public static final int menu=0x7f030008;
-        public static final int options=0x7f030009;
-        public static final int space_cog=0x7f03000a;
-        public static final int yes_no=0x7f03000b;
+        public static final int light_house_sequence=0x7f030006;
+        public static final int light_house_test=0x7f030007;
+        public static final int main_menu=0x7f030008;
+        public static final int menu=0x7f030009;
+        public static final int options=0x7f03000a;
+        public static final int resverse_submit=0x7f03000b;
+        public static final int reverse_month=0x7f03000c;
+        public static final int reverse_month_submit=0x7f03000d;
+        public static final int space_cog=0x7f03000e;
+        public static final int yes_no=0x7f03000f;
     }
     public static final class string {
         public static final int AMTS=0x7f04002f;
@@ -144,6 +142,7 @@ public final class R {
         public static final int MenuExamButtonText=0x7f04002e;
         public static final int MenuGDS5Text=0x7f040038;
         public static final int MenuLighthouseTestButtonText=0x7f04002b;
+        public static final int MenuLighthouseTestButtonTextSequence=0x7f040067;
         public static final int MenuOptionButtonText=0x7f04003c;
         public static final int MenuText=0x7f04002c;
         public static final int MenuTwoItemText=0x7f040036;
@@ -152,6 +151,7 @@ public final class R {
         public static final int Passed=0x7f040032;
         public static final int ProbableDementia=0x7f04004b;
         public static final int Result=0x7f04003f;
+        public static final int ReverseMonthTest=0x7f040066;
         public static final int SelectedValue=0x7f040054;
         public static final int SpaceCogTest=0x7f04004a;
         public static final int Speed=0x7f040010;

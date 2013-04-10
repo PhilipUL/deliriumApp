@@ -40,6 +40,7 @@ public class Menu extends ActivityBase
         elements.add(findViewById(R.id.GDS5Button));
         elements.add(findViewById(R.id.BallTestButton));
         elements.add(findViewById(R.id.SpaceCogButton));
+        elements.add(findViewById(R.id.lighthouseMenuButtonSequence));
         initText(elements);
     }
 }

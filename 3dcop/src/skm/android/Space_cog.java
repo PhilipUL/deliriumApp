@@ -47,18 +47,7 @@ public class Space_cog extends ActivityBase {
 
     }
 
-    /*private void bindSpinner(Spinner spinner, List<String> temp, AdapterView.OnItemSelectedListener modle, Context applicationContext) {
-        String[] strings;SpinnerArrayAdapter<String> adapter;
-        strings = new String[temp.size()];
-        for(int i=0; i<temp.size();i++){
-            strings[i] = temp.get(i);
-        }
-        adapter = new SpinnerArrayAdapter<String>(this,strings);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-//        spinner.setSelection(adapter.getPosition(Shared.getOptionAtribute(key, attribute, applicationContext)));
-        spinner.setOnItemSelectedListener(modle);
-    }*/
+
 
 
     @Override

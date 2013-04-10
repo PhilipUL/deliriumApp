@@ -34,13 +34,28 @@ public class MainMenuViewModle extends YesNoViewModleBase implements Serializabl
         else if(getFilesDir().canRead())  Shared.resetOptions(getApplicationContext());
 
     }
+    public final Command LaunchExamSequence = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+//
+            Intent LaunchLightHouseTest = new Intent(MainMenu.getCurrentInstance(), Lighthouse.class);
+            LaunchLightHouseTest.putExtra(Shared.MAIN_MENU_LAUNCHED,true);
+            LaunchLightHouseTest.putExtra(Shared.LIGHTHOUSE_SEQUENCE,true);
+            LightHouseViewModle2D.getInstance(getApplicationContext(), null).clear();
+
+
+            // Menu.getCurrentInstance().finish();
+            MainMenu.getCurrentInstance().startActivity(LaunchLightHouseTest);
+        }
+    };
+
      public final Command LaunchExam = new Command(){
         @Override
 	        public void Invoke(View arg0, Object... arg1) {
 //
            Intent LaunchLightHouseTest = new Intent(MainMenu.getCurrentInstance(), Lighthouse.class);
            LaunchLightHouseTest.putExtra(Shared.MAIN_MENU_LAUNCHED,true);
-           LightHouseViewModle2D.getInstance(getApplicationContext(),null).clear();
+           LightHouseViewModle2D.getInstance(getApplicationContext(), null).clear();
 
 
            // Menu.getCurrentInstance().finish();

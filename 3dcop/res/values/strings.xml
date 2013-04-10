@@ -64,6 +64,8 @@ some of the more repetitive tasks involved in administering these tests. </strin
     <string name="radio_headon_flash">Head-on Flash</string>
     <string name="lightHouseSequence">Lighthouse Flash Sequence</string>
     <string name="lighthouseSequenceText">3,2,4 (= 3 flashes, pause, 2 flashes, pause, 4 flashes ..etc)</string>
+    <string name="ReverseMonthTest">Reverse Month Text</string>
+    <string name="MenuLighthouseTestButtonTextSequence">LightHouse Sequence Test</string>
 
 
 </resources>

@@ -51,7 +51,7 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
     // what is the number of bounces specified
     private int specifiedNoBounceCount;
 
-    // do we want distractor balls
+    // do we want distractor months
     private boolean distractorBalls;
     private boolean randomise;
     private float distractorBallsMax;
@@ -227,6 +227,17 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
 
 
                     // 50 should be the height devided by constant,
+
+                    if(targetMaxSpeed == 0.0)
+                    {
+                        targetMaxSpeed = 0.2f;
+                    }
+
+                    if(targetMinSpeed == 0.0)
+                    {
+                        targetMinSpeed = 0.1f;
+                    }
+
                   if(randomise == true)
                   {
                       int temp;
@@ -255,6 +266,15 @@ public class BallViewViewModle extends ViewModleBase implements Serializable {
                       int velocity2 = 0;
                       if(randomise == true)
                       {
+                          if(distractorBallsMax == 0.0)
+                          {
+                              distractorBallsMax = 0.2f;
+                          }
+
+                          if(distractorBallsMin == 0.0)
+                          {
+                              distractorBallsMin = 0.1f;
+                          }
                           int temp;
                           if(distractorBallsMin > distractorBallsMax)
                           {

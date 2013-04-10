@@ -11,18 +11,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".DRSQuestion" android:label="@string/DRS"/>
+        <activity android:name=".Lighthouse" android:label="@string/DRS"/>
         <activity android:name=".AMTS" android:label="@string/AMTS"/>
         <activity android:name=".Result" android:label="@string/Result"/>
         <activity android:name=".TwoItemScreener" android:label="@string/twoItem"/>
         <activity android:name=".CAM" android:label="@string/Cam"/>
         <activity android:name=".GDS5" android:label="@string/Gds5"/>
-        <activity android:name=".Lighthouse" android:label="@string/app_name"/>
         <activity android:name=".Nudesc" android:label="@string/Nudesc"/>
         <activity android:name=".Menu" android:label="@string/app_name"/>
         <activity android:name=".About" android:label="@string/app_name"/>
         <activity android:name=".Options" android:label="@string/options"/>
         <activity android:name=".Ball" android:label="@string/BallTest"/>
         <activity android:name=".Space_cog"/>
+        <activity android:name=".Reverse_Month"/>
         <activity android:name=".Config_screen" android:label="@string/MenuConfigButtonText"/>
     </application>
 </manifest> 

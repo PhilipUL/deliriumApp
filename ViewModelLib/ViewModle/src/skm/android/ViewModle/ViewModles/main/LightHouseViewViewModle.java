@@ -38,6 +38,7 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
     public int getFlashcount(){return flashcount;}
     private static LightHouseViewViewModle instance=null;
 
+    boolean useSequence = false;
     private boolean flashesSpecified;
     private int noFlashesSpecified;
     float headonSpeed;
@@ -56,7 +57,16 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
            return instance!=null?instance:(instance=new LightHouseViewViewModle(c,v));
        }
 
-     public static void clear(){
+    public boolean isUseSequence() {
+        return useSequence;
+    }
+
+    public void setUseSequence(boolean useSequence) {
+        this.useSequence = useSequence;
+        init();
+    }
+
+    public static void clear(){
            instance=null;
      }
 
@@ -79,13 +89,11 @@ public class LightHouseViewViewModle  extends ViewModleBase implements Serializa
              sequenceArray[i] = sequenceArray[i].trim();
          }
 
-         if(noFlashesSpecified > 0)
-         {
-             flashesSpecified = true;
-         } else
-         {
-             flashesSpecified = false;
-         }
+
+             flashesSpecified = !useSequence;
+
+
+
 
          //bmp = BitmapFactory.decodeResource(getResources(), R.drawable.lighthouse_pannel);
          //bmp = BitmapFactory.decodeResource(getResources(), R.drawable.simple_lighthouse_pannel);

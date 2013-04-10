@@ -28,6 +28,7 @@ public class LightHouseViewModle2D extends YesNoViewModleBase {
     private Drawable imageSource;
     private Toast toast;
     int selected;
+    public static boolean useSequence = false;
     private static LightHouseViewModle2D instance=null;
     protected LightHouseViewModle2D(Context c){
         super(c);
@@ -35,11 +36,17 @@ public class LightHouseViewModle2D extends YesNoViewModleBase {
         init();
 
     }
+
     public static LightHouseViewModle2D getInstance(Context c, Intent intent){
         instance =instance!=null?instance:(instance=new LightHouseViewModle2D(c));
         if(intent!=null&&intent.hasExtra(Shared.MAIN_MENU_LAUNCHED)){
             instance.mainMenuLaunched = intent.getExtras().getBoolean(Shared.MAIN_MENU_LAUNCHED);
             instance.launcher=intent;
+        }
+        if(intent!=null&&intent.hasExtra(Shared.LIGHTHOUSE_SEQUENCE)){
+            useSequence = intent.getExtras().getBoolean(Shared.LIGHTHOUSE_SEQUENCE);
+//            LightHouseViewViewModle.getInstance(c,null).setUseSequence(useSequence);
+
         }
         return instance;
     }
@@ -64,6 +71,7 @@ public class LightHouseViewModle2D extends YesNoViewModleBase {
         }
     };
     private void advance() {
+
         Lighthouse.getCurrentInstance().finish();
         if(toast!=null)toast.show();
         Activity caller = this.mainMenuLaunched ? MainMenu.getCurrentInstance():  Menu.getCurrentInstance();
@@ -80,6 +88,7 @@ public class LightHouseViewModle2D extends YesNoViewModleBase {
     public Command yes;
     public Command no;
     private void init(){
+//        LightHouseViewViewModle.getInstance(getApplicationContext(),null).setUseSequence(useSequence);
 //        imageSource = getResources().getDrawable(R.drawable.lighthouse);
 //        image.onPropertyChanged(null, new ArrayList<Object>());
           yes = no =new Command(){

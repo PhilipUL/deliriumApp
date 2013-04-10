@@ -37,6 +37,7 @@ public class Lighthouse extends ActivityBase {
         super.onCreate(savedInstanceState);
         lighthouse =this;
         LightHouseViewModle2D modle = LightHouseViewModle2D.getInstance(this.getApplicationContext(), getIntent());
+        //LightHouseViewModleSequence modle = LightHouseViewModleSequence.getInstance(this.getApplicationContext(), getIntent());
         Binder.init(this.getApplication());
         Binder.setAndBindContentView(this,R.layout.light_house_test, modle);
         Spinner spinner = (Spinner) findViewById(R.id.flashCount);

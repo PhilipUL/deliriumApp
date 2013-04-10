@@ -57,6 +57,7 @@ public class Shared extends ViewModleBase {
 
     public static enum ViewModleType {}
     public final static String MAIN_MENU_LAUNCHED ="mainMenu";
+    public final static String LIGHTHOUSE_SEQUENCE ="true";
 
 
     public static Node getOption(String option, Context context){

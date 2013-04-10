@@ -26,12 +26,25 @@ public class MenuViewModle extends YesNoViewModleBase {
          super(context);
 
     }
+
+    public final Command LaunchLightHouseTestCommandSequence = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+//
+            Intent LaunchLightHouseTest = new Intent(Menu.getCurrentInstance(), Lighthouse.class);
+            LaunchLightHouseTest.putExtra(Shared.MAIN_MENU_LAUNCHED,false);
+            LaunchLightHouseTest.putExtra(Shared.LIGHTHOUSE_SEQUENCE,true);
+            // Menu.getCurrentInstance().finish();
+            Menu.getCurrentInstance().startActivity(LaunchLightHouseTest);
+        }
+    };
      public final Command LaunchLightHouseTestCommand = new Command(){
         @Override
 	        public void Invoke(View arg0, Object... arg1) {
 //
            Intent LaunchLightHouseTest = new Intent(Menu.getCurrentInstance(), Lighthouse.class);
            LaunchLightHouseTest.putExtra(Shared.MAIN_MENU_LAUNCHED,false);
+            LaunchLightHouseTest.putExtra(Shared.LIGHTHOUSE_SEQUENCE,false);
            // Menu.getCurrentInstance().finish();
             Menu.getCurrentInstance().startActivity(LaunchLightHouseTest);
         }
@@ -94,4 +107,13 @@ public class MenuViewModle extends YesNoViewModleBase {
             MainMenu.getCurrentInstance().startActivity(new Intent(MainMenu.getCurrentInstance(), Space_cog.class));
         }
     };
+
+    public final Command ReverseMonth = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            BallViewModle2D.getInstance(getApplicationContext(),null).clear();
+            MainMenu.getCurrentInstance().startActivity(new Intent(MainMenu.getCurrentInstance(), Reverse_Month.class));
+        }
+    };
+
 }

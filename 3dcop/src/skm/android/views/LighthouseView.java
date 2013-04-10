@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import skm.android.ViewModle.ViewModles.main.LightHouseViewModle2D;
 import skm.android.ViewModle.ViewModles.main.LightHouseViewViewModle;
 
 
@@ -30,7 +31,9 @@ public class LighthouseView extends View {
     public LighthouseView(Context context) {
         super(context);
         LightHouseViewViewModle.clear();
+
         modle = LightHouseViewViewModle.getInstance(context,this);
+        modle.setUseSequence(LightHouseViewModle2D.useSequence);
 
 //        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.lighthouse_pannel);
 //        clips  = new Vector<IClip>();
