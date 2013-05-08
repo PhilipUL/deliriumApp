@@ -29,6 +29,7 @@ import java.util.Vector;
 public class ReverseMonthViewViewModle extends ViewModleBase implements Serializable {
 
 
+        int boxBoundry = (Integer.parseInt(Shared.getOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.boxSize), this)))/100;
         List<IClip> clips = new Vector<IClip>();
         View view;
         int ballCountSequence;
@@ -273,20 +274,20 @@ public class ReverseMonthViewViewModle extends ViewModleBase implements Serializ
 
                     Collections.shuffle(rectList);
 
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(0), "January"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(1), "February"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(2), "March"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(3), "April"));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(0), "January", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(1), "February", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(2), "March", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(3), "April", boxBoundry));
 
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(4), "May"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(5), "June"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(6), "July"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(7), "August"));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(4), "May", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(5), "June", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(6), "July", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(7), "August", boxBoundry));
 
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(8), "September"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(9), "October"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(10), "November"));
-                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(11), "December"));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(8), "September", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(9), "October", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(10), "November", boxBoundry));
+                    months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(11), "December", boxBoundry));
 
 
 //                    setSequenceNumber(months.size());

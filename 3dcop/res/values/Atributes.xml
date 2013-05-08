@@ -22,4 +22,5 @@
     <string name="headonSpeed">headonSpeed</string>
     <string name="target">target</string>
     <string name="distractor">distractor</string>
+    <string name="boxSize">boxSize</string>
 </resources>

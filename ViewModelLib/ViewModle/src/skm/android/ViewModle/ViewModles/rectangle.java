@@ -26,11 +26,12 @@ public class rectangle {
         boolean pressed = false;
         String month;
         int fraction = 0;
+        int boundry = 0;
 
 
 
-        public rectangle(int colour,Rect bounds, String month){
-
+        public rectangle(int colour,Rect bounds, String month, int boundry){
+            this.boundry = boundry;
             this.month = month;
             this.center=center;
             this.bounds=bounds;
@@ -90,7 +91,7 @@ public class rectangle {
             //colour.setColor(Color.parseColor("#ff00ff"));
             colour.setColor(Color.WHITE);
 
-            RectF colourRec = new RectF(ballBounds.left+2, ballBounds.top+2, ballBounds.right-2, ballBounds.bottom-2);
+            RectF colourRec = new RectF(ballBounds.left+boundry, ballBounds.top+boundry, ballBounds.right-boundry, ballBounds.bottom-boundry);
 
 //            colour.getTextSize();
             colour.setTextSize(30);

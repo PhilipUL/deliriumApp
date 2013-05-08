@@ -679,6 +679,52 @@
                       android:orientation="horizontal"
                       android:gravity="center"
                       android:layout_margin="5dp">
+
+            <TextView android:layout_height="fill_parent"
+                      android:layout_width="100dp"
+                      android:gravity="center"
+                      android:layout_margin="5dp"
+                      android:layout_weight=".5"
+                      android:text="Reverse Month Options"
+                      android:id="@id/FontTextFlashFront"/>
+
+            <LinearLayout android:layout_width="fill_parent"
+                          android:layout_height="75dp"
+                          android:minHeight="50dp"
+                          android:maxHeight="100dp"
+                          android:orientation="horizontal"
+                          android:gravity="center"
+                          android:layout_margin="5dp">
+
+                <TextView android:layout_height="fill_parent"
+                          android:layout_width="100dp"
+                          android:gravity="center"
+                          android:layout_margin="5dp"
+                          android:layout_weight=".5"
+                          binding:text="CONCAT('Reverse Month Box Size:', ' ', seekBarBoxSize)"
+                          android:id="@id/FontTextFlashSpeed"
+                        />
+
+                <SeekBar
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight=".5"
+                        android:id="@id/seekbarFlashRotateSpeed"
+                        android:max="5"
+                        android:progress="0"
+                        binding:progress="seekBarBoxSize"
+                        binding:onSeekBarChange="SliderMovedBoxSize"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="75dp"
+                      android:minHeight="50dp"
+                      android:maxHeight="100dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_margin="5dp">
             <Button android:layout_width="100dp"
                     android:layout_height="fill_parent"
                     android:id="@id/Reset"
@@ -686,6 +732,8 @@
                     android:text="Reset"
                     binding:onClick="resetOptions" />
         </LinearLayout>
+
+
 
 
     </LinearLayout>
