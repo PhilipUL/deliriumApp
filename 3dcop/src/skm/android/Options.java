@@ -309,6 +309,12 @@ public class Options extends ActivityBase
         SeekBar lighthouseFlashSpeedHeadon = (SeekBar) findViewById(R.id.seekbarFlashSpeed);
         lighthouseFlashSpeedHeadon.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.lighthouseflashkey), getString(R.string.headonSpeed), this)));
 
+        SeekBar reverseMonthBoxSize = (SeekBar) findViewById(R.id.seekbarMonthBoxSize);
+        lighthouseFlashSpeedHeadon.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.boxSize), this)));
+
+        SeekBar reverseMonthTextSize = (SeekBar) findViewById(R.id.seekbarMonthTextSize);
+        lighthouseFlashSpeedHeadon.setProgress(Integer.decode(Shared.getOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.textSize), this)));
+
     }
 
 

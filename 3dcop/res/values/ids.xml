@@ -71,4 +71,6 @@
     <item name="lighthouseSequenceText" type="id"/>
     <item name="ReverseMonthButton" type="id"/>
     <item name="lighthouseMenuButtonSequence" type="id"/>
+    <item name="seekbarMonthTextSize" type="id"/>
+    <item name="seekbarMonthBoxSize" type="id"/>
 </resources>

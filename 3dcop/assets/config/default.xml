@@ -44,7 +44,7 @@
     </colours>
     <balltest ballcount="0" />
     <lighthouseflash flashcount="1" sequence="2, 1" rotate="true" headonSpeed="1" rotateSpeed="1" flashSize="1"/>
-    <ReverseMonth boxSize="10"/>
+    <ReverseMonth boxSize="10" textSize="30" />
     <distract_Balls distract="false" />
     <ballColours target="red" distractor="blue"/>
     <TargetSpeed TargetMaxSpeed="0" TargetMinSpeed="0" TargetSpeedBall="0"/>

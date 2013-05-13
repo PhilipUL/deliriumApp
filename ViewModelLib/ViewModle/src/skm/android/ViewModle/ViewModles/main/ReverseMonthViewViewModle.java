@@ -30,6 +30,8 @@ public class ReverseMonthViewViewModle extends ViewModleBase implements Serializ
 
 
         int boxBoundry = (Integer.parseInt(Shared.getOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.boxSize), this)))/100;
+
+        int textSize = Math.abs(((Integer.parseInt(Shared.getOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.textSize), this)))/100)-100);
         List<IClip> clips = new Vector<IClip>();
         View view;
         int ballCountSequence;
@@ -289,6 +291,17 @@ public class ReverseMonthViewViewModle extends ViewModleBase implements Serializ
                     months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(10), "November", boxBoundry));
                     months.add(new rectangle(Color.parseColor("#00ff00"), rectList.get(11), "December", boxBoundry));
 
+                    //Vector v = new Vector();
+//                    Iterator itr = months.iterator();
+//                    while(itr.hasNext())
+//                    {
+//                        itr.next().
+//                    }
+
+                    for (int i = 0; i < months.size(); i++)
+                    {
+                        months.get(i).setTextSize(textSize);
+                    }
 
 //                    setSequenceNumber(months.size());
 //                    sequenceNumber = getSequenceNumber();

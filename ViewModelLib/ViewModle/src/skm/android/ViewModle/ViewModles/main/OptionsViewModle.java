@@ -57,6 +57,7 @@ public class OptionsViewModle extends ViewModleBase {
     public FloatObservable SeekBarMaxDistractionSpeed = new FloatObservable(0f);
 
     public FloatObservable seekBarBoxSize = new FloatObservable(0f);
+    public FloatObservable seekBarTextSize = new FloatObservable(0f);
     //public FloatObservable seekBarBoxSize = new FloatObservable(0f);
 
     public FloatObservable SeekBarFlashRotateSpeedNumber = new FloatObservable(0f);
@@ -104,6 +105,14 @@ public class OptionsViewModle extends ViewModleBase {
         public void Invoke(View arg0, Object... arg1) {
             SeekBar bar = (SeekBar)  arg0;
             Shared.setOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.boxSize), String.valueOf(bar.getProgress()), getApplicationContext());
+        }
+    };
+
+    public final Command SliderMovedTextSize = new Command(){
+        @Override
+        public void Invoke(View arg0, Object... arg1) {
+            SeekBar bar = (SeekBar)  arg0;
+            Shared.setOptionAtribute(getString(R.string.ReverseMonthkey), getString(R.string.textSize), String.valueOf(bar.getProgress()), getApplicationContext());
         }
     };
 

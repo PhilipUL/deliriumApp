@@ -13,6 +13,7 @@ public class rectangle {
 
         Point center;
 
+        int textSize = 30;
         Paint paint;
         Rect bounds;
         RectF ballBounds;
@@ -43,6 +44,14 @@ public class rectangle {
             velosity= new Point(0,(int)Math.round(5+Math.random()*18));
             //initialVelosity = velosity;
             latTime=currentTime=System.currentTimeMillis();
+        }
+
+        public int getTextSize() {
+            return textSize;
+        }
+
+        public void setTextSize(int textSize) {
+            this.textSize = textSize;
         }
 
         public String getMonth() {
@@ -94,7 +103,7 @@ public class rectangle {
             RectF colourRec = new RectF(ballBounds.left+boundry, ballBounds.top+boundry, ballBounds.right-boundry, ballBounds.bottom-boundry);
 
 //            colour.getTextSize();
-            colour.setTextSize(30);
+            colour.setTextSize(textSize);
             float[] widths = new float[month.length()];
             colour.getTextWidths(month, widths);
             float offsetWidth =0;
