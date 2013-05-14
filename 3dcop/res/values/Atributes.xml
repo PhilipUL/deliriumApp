@@ -24,4 +24,6 @@
     <string name="distractor">distractor</string>
     <string name="boxSize">boxSize</string>
     <string name="textSize">textSize</string>
+    <string name="boxColour">boxColour</string>
+    <string name="textColour">textColour</string>
 </resources>

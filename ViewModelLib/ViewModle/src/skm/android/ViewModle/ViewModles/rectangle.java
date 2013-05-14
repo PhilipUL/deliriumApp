@@ -12,8 +12,10 @@ import android.graphics.*;
 public class rectangle {
 
         Point center;
+        String textColour = "#ff00ff";
 
         int textSize = 30;
+        int boxColour;
         Paint paint;
         Rect bounds;
         RectF ballBounds;
@@ -36,14 +38,25 @@ public class rectangle {
             this.month = month;
             this.center=center;
             this.bounds=bounds;
+            boxColour = colour;
             paint= new Paint();
             paint.setColor(colour);
             paint.setAntiAlias(true);
-            ballBounds= new RectF(bounds);
+            //ballBounds= new RectF(bounds);
+            ballBounds= new RectF(bounds.left+boundry, bounds.top+boundry,bounds.right-boundry,bounds.bottom-boundry);
+                        //new RectF(bounds.left+boundry, bounds.top+boundry,bounds.right-boundry,bounds.bottom-boundry)
             aceleration= new Point(0,2);
             velosity= new Point(0,(int)Math.round(5+Math.random()*18));
             //initialVelosity = velosity;
             latTime=currentTime=System.currentTimeMillis();
+        }
+
+        public String getTextColour() {
+            return textColour;
+        }
+
+        public void setTextColour(String textColour) {
+            this.textColour = textColour;
         }
 
         public int getTextSize() {
@@ -76,7 +89,7 @@ public class rectangle {
         public boolean contains(Point p)
         {
 
-            return bounds.contains(p.x, p.y);
+            return ballBounds.contains(p.x, p.y);
         }
         public int getMinSpeed() {
             return minSpeed;
@@ -97,10 +110,11 @@ public class rectangle {
         public void Draw(Canvas c) {
 
             Paint colour = new Paint();
-            //colour.setColor(Color.parseColor("#ff00ff"));
-            colour.setColor(Color.WHITE);
+            colour.setColor(Color.parseColor(textColour));
+            //colour.setColor(Color.WHITE);
 
-            RectF colourRec = new RectF(ballBounds.left+boundry, ballBounds.top+boundry, ballBounds.right-boundry, ballBounds.bottom-boundry);
+//            RectF colourRec = new RectF(ballBounds.left+boundry, ballBounds.top+boundry, ballBounds.right-boundry, ballBounds.bottom-boundry);
+            RectF colourRec = new RectF(ballBounds.left, ballBounds.top, ballBounds.right, ballBounds.bottom);
 
 //            colour.getTextSize();
             colour.setTextSize(textSize);
@@ -137,7 +151,7 @@ public class rectangle {
                 this.setPaint(paint);
             } else {
                 Paint paint = new Paint();
-                paint.setColor(Color.parseColor("#00ff00"));
+                paint.setColor(boxColour);
                 this.setPaint(paint);
             }
         }

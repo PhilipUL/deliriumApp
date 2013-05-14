@@ -215,6 +215,12 @@ public class Options extends ActivityBase
 //        bindSpinner(spinner, temp, getString(R.string.target), getString(R.string.ballColours),modle.targetColourListener, this);
 //        spinner = (Spinner) findViewById(R.id.TargetBallColourChoser);
 
+        //Spinner spinner = (Spinner) findViewById(R.id.textMonthColourChoser);
+        spinner = (Spinner) findViewById(R.id.textMonthColourChoser);
+        bindSpinner(spinner, temp, getString(R.string.textColour),getString(R.string.ReverseMonthkey), modle.textMonthColourChoser, this);
+        spinner = (Spinner) findViewById(R.id.boxColourChoser);
+        bindSpinner(spinner, temp, getString(R.string.boxColour),getString(R.string.ReverseMonthkey), modle.boxMonthColourChoser, this);
+
         spinner = (Spinner) findViewById(R.id.fontChoser);
         List<String> temp2 = new ArrayList<String>();
         temp2.add("0");
@@ -239,6 +245,8 @@ public class Options extends ActivityBase
 
         temp = modle.getFonts();
         bindSpinner(spinner, temp, getString(R.string.current), getString(R.string.Font),modle.fontListener,this);
+
+
     }
 
     private void bindSpinner(Spinner spinner, List<String> temp, String attribute, String key,AdapterView.OnItemSelectedListener modle, Context applicationContext) {

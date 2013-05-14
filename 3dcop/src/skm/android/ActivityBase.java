@@ -90,9 +90,6 @@ public abstract class ActivityBase  extends Activity{
 //                //s.setBackgroundColor();
 
             }
-                 }
-
-
-
+        }
     }
 }

@@ -73,4 +73,8 @@
     <item name="lighthouseMenuButtonSequence" type="id"/>
     <item name="seekbarMonthTextSize" type="id"/>
     <item name="seekbarMonthBoxSize" type="id"/>
+    <item name="textMonthColour" type="id"/>
+    <item name="boxColour" type="id"/>
+    <item name="boxColourChoser" type="id"/>
+    <item name="textMonthColourChoser" type="id"/>
 </resources>

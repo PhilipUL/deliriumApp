@@ -327,5 +327,26 @@ public class OptionsViewModle extends ViewModleBase {
 
         }
     };
+    public AdapterView.OnItemSelectedListener textMonthColourChoser = new AdapterView.OnItemSelectedListener(){
+        public void onItemSelected(AdapterView<?> parent,View view, int pos, long id) {
+            Shared.setOptionAtribute(getString(R.string.ReverseMonthkey),getString(R.string.textColour),(String)parent.getItemAtPosition(pos),getApplicationContext());
+            Options.getCurrentInstance().initAll(true);
+        }
+
+        public void onNothingSelected(AdapterView parent) {
+
+        }
+    };
+
+    public AdapterView.OnItemSelectedListener boxMonthColourChoser = new AdapterView.OnItemSelectedListener(){
+        public void onItemSelected(AdapterView<?> parent,View view, int pos, long id) {
+            Shared.setOptionAtribute(getString(R.string.ReverseMonthkey),getString(R.string.boxColour),(String)parent.getItemAtPosition(pos),getApplicationContext());
+            Options.getCurrentInstance().initAll(true);
+        }
+
+        public void onNothingSelected(AdapterView parent) {
+
+        }
+    };
 
 }
